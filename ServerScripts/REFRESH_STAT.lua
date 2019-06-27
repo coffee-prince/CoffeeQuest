@@ -15,7 +15,7 @@ function REFRESH_STAT()
 	local ADD_MOVE_SPEED = 5
 
 	local DEFAULT_ATTACK_SPEED = 200
-	local SUB_ATTACK_SPEED = 10
+	local SUB_ATTACK_SPEED = 1
 
 	local DEFAULT_CRITICAL_PERCENT = 10
 	local ADD_CRITICAL_PERCENT = 1
@@ -74,6 +74,8 @@ function REFRESH_STAT()
 
 	unit.SendUpdated()
 
+	print(unit.GetStat(4))
+	unit.FireEvent("REFRESH_ATTACK_SPEED", unit.GetStat(4))
 end
 
 Server.GetTopic("REFRESH_STAT").Add(REFRESH_STAT)
