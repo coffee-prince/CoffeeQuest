@@ -2,7 +2,7 @@
 	--enemy.say(1)
 --end)
 function REFRESH_STAT()
-	local DEFAULT_HP = 40
+	local DEFAULT_HP = 100
 	local ADD_HP = 10
 
 	local DEFAULT_ATK = 10
