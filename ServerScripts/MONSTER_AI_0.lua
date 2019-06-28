@@ -13,13 +13,9 @@ function firstAttack(enemy,ai,event,data)
                or (math.abs(enemy.x-enemy.field.GetUnit(ai.GetTargetUnitID()).x) >= 300)
                or (math.abs(enemy.y-enemy.field.GetUnit(ai.GetTargetUnitID()).y) >= 300) then
 
-            if ai.GetTargetUnit() ~= nil then
-                enemy.say('타겟이 사라졌군..')
-            end
-
             ai.SetFollowTarget(false) --타겟이 사라졌으면 추적을 비활성화
             ai.SetTargetUnit(nil)
-            ai.SetNearTarget(0,200)
+            ai.SetNearTarget(0,400)
         end
 
         --타겟이 있으면 타겟 방향을 향해 10번 스킬을 발사
