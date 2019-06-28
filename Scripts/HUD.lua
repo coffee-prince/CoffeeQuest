@@ -100,6 +100,8 @@ function HUD_Initialize()
 
         hp_txt.text = current_hp .. " / " .. max_hp
         money_txt.text = player_money
+
+		Client.FireEvent("REQUEST_MONEY")
     end
 
     local isShowStat = false
@@ -116,7 +118,7 @@ function HUD_Initialize()
 
     Client.GetTopic("MONEY_CHANGE").Add(function(money)
         player_money = money
-        Client.myPlayerUnit.Say("<color=#000000>" .. money .."</color>")
+       --- Client.myPlayerUnit.Say("<color=#000000>" .. money .."</color>")
     end)
 
     local isShowBook = false
