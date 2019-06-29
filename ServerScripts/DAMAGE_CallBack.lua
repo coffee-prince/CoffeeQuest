@@ -16,6 +16,10 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 			return d * (critical_damage / 100)
 		end
 
+		if attacker.id == 1 then
+			defender.MakeKnockback(32 * 5, 0.3)
+		end
+
 
 		return math.max(attacker.atk - defender.def, 1)
 	end
