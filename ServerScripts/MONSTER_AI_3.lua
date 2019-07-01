@@ -18,19 +18,19 @@ function firstAttack(enemy,ai,event,data)
             ai.SetNearTarget(0,400)
         end
 
-        --타겟이 있으면 타겟 방향을 향해 10번 스킬을 발사
+
         if ai.GetTargetUnit() ~= nil then
 
 			target = ai.GetTargetUnit()
 
 			d = ai.Distance(enemy.x, enemy.y, target.x, target.y)
 
-			if d > 32 * 3 then
-				ai.MoveToPosition(target.x + math.random(-32 * 5, 32 * 5), target.y + math.random(-32 * 5, 32 * 5))
+			if d <= 32 * 5 then
+				 ai.UseSkill(2)
 			end
 
 
-            ai.UseSkill(2)
+
 
         end
 
@@ -48,4 +48,4 @@ function firstAttack(enemy,ai,event,data)
 
 end
 
-Server.SetMonsterAI(0, firstAttack) -- 1번몬스터에게 firstAttack 적용
+Server.SetMonsterAI(3, firstAttack) -- 1번몬스터에게 firstAttack 적용
