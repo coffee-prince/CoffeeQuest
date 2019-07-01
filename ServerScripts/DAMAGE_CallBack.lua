@@ -17,7 +17,7 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 		end
 
 		if attacker.id == 1 then
-			defender.MakeKnockback(32 * 1.5, 0.1)
+			--defender.MakeKnockback(32 * 1.5, 0.1)
 		end
 
 
