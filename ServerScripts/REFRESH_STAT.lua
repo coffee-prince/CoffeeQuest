@@ -6,10 +6,10 @@ function REFRESH_STAT()
 	local ADD_HP = 10
 
 	local DEFAULT_ATK = 10
-	local ADD_ATK = 10
+	local ADD_ATK = 5
 
 	local DEFAULT_DEF = 10
-	local ADD_DEF = 10
+	local ADD_DEF = 5
 
 	local DEFAULT_MOVE_SPEED = 150
 	local ADD_MOVE_SPEED = 5
@@ -79,4 +79,9 @@ function REFRESH_STAT()
 end
 
 Server.GetTopic("REFRESH_STAT").Add(REFRESH_STAT)
+
+Server.GetTopic("HP_RECOVERY").Add(function()
+	amount = unit.GetStat(3)
+	unit.AddHP(amount)
+end)
 

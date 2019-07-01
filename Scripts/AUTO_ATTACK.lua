@@ -20,9 +20,10 @@ function AutoAttack()
 		attackTime = attackTime + dt
 
 		if hpTime > HP_SPEED then
-
 			hpTime = 0
+			Client.FireEvent("HP_RECOVERY")
 		end
+
 
 		if attackTime < ATTACK_SPEED then
 			return
