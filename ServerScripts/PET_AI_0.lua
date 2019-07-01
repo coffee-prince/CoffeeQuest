@@ -3,7 +3,7 @@ Server.SetPetAI(
         function(pet,ai,event)
 
 
-				pet.Say("최고 존엄 김홍일 PD!")
+				--pet.Say("최고 존엄 김홍일 PD!")
 
 				ai.SetFollowMaster(true,10,400)
                 --2초마다 실행

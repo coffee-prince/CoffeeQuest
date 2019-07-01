@@ -28,8 +28,10 @@ function firstAttack(enemy,ai,event,data)
 
 			--ai.MoveToPosition(target.x , target.y)
 
+			ai.UseSkill(3)
 			enemy.MakeKnockback(-200, 0.1)
-				enemy.Say("탐탐!!")
+			enemy.Say("탐탐!!")
+
 
 
 

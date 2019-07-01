@@ -29,7 +29,7 @@ function firstAttack(enemy,ai,event,data)
 
 			Server.RunLater(function()
 				--enemy.Say(111)
-				ai.UseSkill(2)
+				ai.UseSkill(4)
 			end, 1)
 
 
