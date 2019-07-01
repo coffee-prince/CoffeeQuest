@@ -22,15 +22,16 @@ function firstAttack(enemy,ai,event,data)
         if ai.GetTargetUnit() ~= nil then
 
 			target = ai.GetTargetUnit()
-
+			 ai.SetTargetUnit(target)
+			ai.SetFollowTarget(true)
 			d = ai.Distance(enemy.x, enemy.y, target.x, target.y)
 
-			ai.MoveToPosition(target.x + math.random(-32 * 3, 32 * 3), target.y + math.random(-32 * 3, 32 * 3))
+			--ai.MoveToPosition(target.x , target.y)
 
-			Server.RunLater(function()
-				--enemy.Say(111)
-				ai.UseSkill(2)
-			end, 1)
+			enemy.MakeKnockback(-200, 0.1)
+				enemy.Say("탐탐!!")
+
+
 
 
         end
@@ -49,4 +50,4 @@ function firstAttack(enemy,ai,event,data)
 
 end
 
-Server.SetMonsterAI(4, firstAttack) -- 1번몬스터에게 firstAttack 적용
+Server.SetMonsterAI(5, firstAttack) -- 1번몬스터에게 firstAttack 적용
