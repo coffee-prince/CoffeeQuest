@@ -142,8 +142,11 @@ function HUD_Initialize()
     end)
 
     HUD_passive_button.onClick.Add(function()
-        Client.ShowBag(true)
-        --Client.myPlayerUnit.Say("<color=#000000>패시브 UI가 뜰 예정이다!</color>")
+        if PASSIVE.IsShow() == false then
+			PASSIVE.Show()
+		else
+			PASSIVE.Hide()
+		end
     end)
 
     Client.onTick.Add(hp_update, 30)

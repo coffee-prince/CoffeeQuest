@@ -86,6 +86,7 @@ function REFRESH_STAT()
 	stats[9] = unit.GetStat(101)
 
 	unit.FireEvent("REFRESH", stats[1], stats[2], stats[3], stats[4], stats[5], stats[6], stats[7], stats[8], stats[9])
+	unit.FireEvent("REFRESH_COUNT", count_0, count_1, count_2, count_3, count_4, count_5, count_6, count_7, count_8)
 
 	unit.FireEvent("REFRESH_ATTACK_SPEED", unit.GetStat(4))
 end

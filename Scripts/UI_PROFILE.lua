@@ -60,7 +60,7 @@ function PROFILE_INIT ()
 
 
 
-	fn = {}
+	local fn = {}
 
 	fn.IsShow = function()
 		return is_show
