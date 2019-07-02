@@ -47,7 +47,7 @@ function PROFILE_INIT ()
 	local WIDTH_FONT = 200
 	local HEIGHT_FONT = 14
 
-	UI_STATS = {}
+	local UI_STATS = {}
 
 	for i = 1, 9 do
 		UI_STATS[i] = Text("100", Rect(OFFSET_X_FONT, OFFSET_Y_FONT[i], WIDTH_FONT, HEIGHT_FONT))
