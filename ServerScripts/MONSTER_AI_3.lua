@@ -26,7 +26,7 @@ function firstAttack(enemy,ai,event,data)
 			d = ai.Distance(enemy.x, enemy.y, target.x, target.y)
 
 			if d <= 32 * 5 then
-				 ai.UseSkill(2)
+				 ai.UseSkill(6)
 			end
 
 
