@@ -41,11 +41,11 @@ function REFRESH_STAT()
 
 	--unit.moveSpeed = 500
 	-- 체력(레벨업)
-	local prev_count_0 = unit.GetVar(10)
+	local prev_count_0 = unit.GetVar(900)
 	if count_0 > prev_count_0 then
 		unit.AddEXP(count_0 - prev_count_0)
 	end
-	unit.SetVar(10, count_0)
+	unit.SetVar(900, count_0)
 
 	-- 회복량 (MAGIC_DEFENSE = 3)
 	unit.SetStat(3, DEFAULT_HP_AMOUNT + ADD_HP_AMOUNT * count_1)
