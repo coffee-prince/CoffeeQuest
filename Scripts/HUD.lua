@@ -109,16 +109,14 @@ function HUD_Initialize()
 		Client.FireEvent("REQUEST_MONEY")
     end
 
-    local isShowStat = false
+
 
     HUD_profile_button.onClick.Add(function()
-        if isShowStat == true then
-            isShowStat = false
-        else
-            isShowStat = true
-        end
-
-        Client.ShowStats(isShowStat)
+        if PROFILE.IsShow() == false then
+			PROFILE.Show()
+		else
+			PROFILE.Hide()
+		end
     end)
 
     Client.GetTopic("MONEY_CHANGE").Add(function(money)

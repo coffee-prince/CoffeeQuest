@@ -74,6 +74,19 @@ function REFRESH_STAT()
 
 	unit.SendUpdated()
 
+	stats = {}
+	stats[1] = unit.GetStat(6)
+	stats[2] = unit.GetStat(3)
+	stats[3] = unit.moveSpeed
+	stats[4] = unit.GetStat(4)
+	stats[5] = unit.GetStat(0)
+	stats[6] = unit.GetStat(1)
+	stats[7] = unit.GetStat(2)
+	stats[8] = unit.GetStat(5)
+	stats[9] = unit.GetStat(101)
+
+	unit.FireEvent("REFRESH", stats[1], stats[2], stats[3], stats[4], stats[5], stats[6], stats[7], stats[8], stats[9])
+
 	unit.FireEvent("REFRESH_ATTACK_SPEED", unit.GetStat(4))
 end
 
