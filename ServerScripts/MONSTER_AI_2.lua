@@ -30,7 +30,7 @@ function firstAttack(enemy,ai,event,data)
 			end
 
 
-            ai.UseSkill(2)
+            ai.UseSkill(5)
 
         end
 
