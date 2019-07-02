@@ -1,11 +1,19 @@
 Server.damageCallback = function(attacker, defender, damage, skillID)
 
-	print(attacker.type)
+	-- Á¤·É1 ³Ë¹é
+	if skillID == 10 then
+		defender.MakeKnockback(32 * 2, 0.1)
+		return 0
+	end
 
-	--print(attacker.attack)
-	--print(attacker.atk)
+	-- Á¤·É2 ÈíÇ÷
+	if skillID == 11 then
+		defender.AddHP(3)
+		return 0
+	end
 
 	if attacker.type == 0 then -- ÇÃ·¹ÀÌ¾î°¡ °ø°İÇÏ´Â °æ¿ì
+
 
 		critical_percent = attacker.GetStat(5)
 		critical_damage  = attacker.GetStat(2)
@@ -16,9 +24,10 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 			return d * (critical_damage / 100)
 		end
 
-		if attacker.id == 1 then
-			--defender.MakeKnockback(32 * 1.5, 0.1)
+		if attacker.characterID == 1 then
+			defender.MakeKnockback(32 * 1.5, 0.1)
 		end
+
 
 
 		return math.max(attacker.atk - defender.def, 1)
@@ -37,6 +46,7 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 
 			defender.MakeKnockback(16, 0.3)
 		end
+
 
 		-- ÃÊ·ÕÀÌ / È«»ïÀÌ
 		if attacker.monsterID == 2 or attacker.monsterID == 3 or attacker.monsterID == 4 then
