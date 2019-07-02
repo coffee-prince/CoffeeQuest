@@ -84,6 +84,11 @@ function HUD_Initialize()
     local player_money = "0"
 
     function hp_update(deltaTime)
+
+		if Client.myPlayerUnit.dead == true then
+			Client.FireEvent("REFRESH_STAT", 1)
+		end
+
         local max_hp = Client.myPlayerUnit.maxHP
 
         local current_hp = Client.myPlayerUnit.hp
