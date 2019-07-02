@@ -129,16 +129,11 @@ function HUD_Initialize()
     Client.FireEvent("REQUEST_MONEY")
 
     HUD_book_button.onClick.Add(function()
-        if isShowBook == true then
-            isShowBook = false
-        else
-            isShowBook = true
-        end
-
-        Client.FireEvent("REQUEST_MONEY", 1)
-
-        Client.ShowCollection(isShowBook)
-        --Client.myPlayerUnit.Say("<color=#000000>도감 UI가 뜰 예정이다!</color>")
+        if COFFEE.IsShow() == false then
+			COFFEE.Show()
+		else
+			COFFEE.Hide()
+		end
     end)
 
     HUD_passive_button.onClick.Add(function()
