@@ -74,7 +74,6 @@ function REFRESH_STAT()
 
 	unit.SendUpdated()
 
-	print(unit.GetStat(4))
 	unit.FireEvent("REFRESH_ATTACK_SPEED", unit.GetStat(4))
 end
 
@@ -84,4 +83,3 @@ Server.GetTopic("HP_RECOVERY").Add(function()
 	amount = unit.GetStat(3)
 	unit.AddHP(amount)
 end)
-
