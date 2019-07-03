@@ -109,16 +109,14 @@ function HUD_Initialize()
 		Client.FireEvent("REQUEST_MONEY")
     end
 
-    local isShowStat = false
+
 
     HUD_profile_button.onClick.Add(function()
-        if isShowStat == true then
-            isShowStat = false
-        else
-            isShowStat = true
-        end
-
-        Client.ShowStats(isShowStat)
+        if PROFILE.IsShow() == false then
+			PROFILE.Show()
+		else
+			PROFILE.Hide()
+		end
     end)
 
     Client.GetTopic("MONEY_CHANGE").Add(function(money)
@@ -131,21 +129,19 @@ function HUD_Initialize()
     Client.FireEvent("REQUEST_MONEY")
 
     HUD_book_button.onClick.Add(function()
-        if isShowBook == true then
-            isShowBook = false
-        else
-            isShowBook = true
-        end
-
-        Client.FireEvent("REQUEST_MONEY", 1)
-
-        Client.ShowCollection(isShowBook)
-        --Client.myPlayerUnit.Say("<color=#000000>도감 UI가 뜰 예정이다!</color>")
+        if COFFEE.IsShow() == false then
+			COFFEE.Show()
+		else
+			COFFEE.Hide()
+		end
     end)
 
     HUD_passive_button.onClick.Add(function()
-        Client.ShowBag(true)
-        --Client.myPlayerUnit.Say("<color=#000000>패시브 UI가 뜰 예정이다!</color>")
+        if PASSIVE.IsShow() == false then
+			PASSIVE.Show()
+		else
+			PASSIVE.Hide()
+		end
     end)
 
     Client.onTick.Add(hp_update, 30)

@@ -39,13 +39,15 @@ function REFRESH_STAT()
 	local count_7 = unit.CountItem(7) -- 치명타 확률 증가
 	local count_8 = unit.CountItem(8) -- 회피 확률 증가
 
+
 	--unit.moveSpeed = 500
 	-- 체력(레벨업)
-	local prev_count_0 = unit.GetVar(10)
+	local prev_count_0 = unit.GetVar(100)
+
 	if count_0 > prev_count_0 then
 		unit.AddEXP(count_0 - prev_count_0)
 	end
-	unit.SetVar(10, count_0)
+	unit.SetVar(100, count_0)
 
 	-- 회복량 (MAGIC_DEFENSE = 3)
 	unit.SetStat(3, DEFAULT_HP_AMOUNT + ADD_HP_AMOUNT * count_1)
@@ -73,6 +75,20 @@ function REFRESH_STAT()
 
 
 	unit.SendUpdated()
+
+	stats = {}
+	stats[1] = unit.GetStat(6)
+	stats[2] = unit.GetStat(3)
+	stats[3] = unit.moveSpeed
+	stats[4] = unit.GetStat(4)
+	stats[5] = unit.GetStat(0)
+	stats[6] = unit.GetStat(1)
+	stats[7] = unit.GetStat(2)
+	stats[8] = unit.GetStat(5)
+	stats[9] = unit.GetStat(101)
+
+	unit.FireEvent("REFRESH", stats[1], stats[2], stats[3], stats[4], stats[5], stats[6], stats[7], stats[8], stats[9])
+	unit.FireEvent("REFRESH_COUNT", count_0, count_1, count_2, count_3, count_4, count_5, count_6, count_7, count_8)
 
 	unit.FireEvent("REFRESH_ATTACK_SPEED", unit.GetStat(4))
 end
