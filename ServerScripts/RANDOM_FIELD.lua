@@ -10,12 +10,18 @@ Server.GetTopic("RANDOM_FIELD").Add(function()
 
 
 
-	local ex = math.random(sum, math.max(3, sum * 3))
+	local ex = math.random(5, math.min(50, math.max(sum * 4, 10)))
+	--local ex = math.random(5,200)
 
-	--field.SetFieldVar(3, ex)
+	field.SetFieldVar(0, ex)
 
 	for i = 1, ex do
-		field.SpawnEnemy(math.random(0, 4), 32*15, -32*15)
+		local monster_id = math.random(7, 13)
+
+		local spawn_x = math.random(32 * 4, 32 * 28)
+		local spawn_y = math.random(-32 * 6, -32 * 18)
+
+		field.SpawnEnemy(monster_id, spawn_x, spawn_y)
 	end
 
 end)

@@ -25,13 +25,12 @@ function firstAttack(enemy,ai,event,data)
 
 			d = ai.Distance(enemy.x, enemy.y, target.x, target.y)
 
-			ai.MoveToPosition(target.x + math.random(-32 * 3, 32 * 3), target.y + math.random(-32 * 3, 32 * 3))
+			if d > 32 * 5 then
+				ai.MoveToPosition(target.x + math.random(-32 * 5, 32 * 5), target.y + math.random(-32 * 5, 32 * 5))
+			end
 
-			Server.RunLater(function()
-				--enemy.Say(111)
-				ai.UseSkill(4)
-			end, 1)
 
+            ai.UseSkill(5)
 
         end
 
@@ -49,4 +48,4 @@ function firstAttack(enemy,ai,event,data)
 
 end
 
-Server.SetMonsterAI(4, firstAttack) -- 1번몬스터에게 firstAttack 적용
+Server.SetMonsterAI(9, firstAttack) -- 1번몬스터에게 firstAttack 적용
