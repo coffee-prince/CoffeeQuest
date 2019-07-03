@@ -9,6 +9,7 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 	-- Á¤·É2 ÈíÇ÷
 	if skillID == 11 then
 		defender.AddHP(3)
+		defender.FireEvent("Heal", 1)
 		return 0
 	end
 
