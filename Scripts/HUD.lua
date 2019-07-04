@@ -112,6 +112,9 @@ function HUD_Initialize()
 
 
     HUD_profile_button.onClick.Add(function()
+		if DUNGEON.IsShow() == true then DUNGEON.Hide() end
+		if PASSIVE.IsShow() == true then PASSIVE.Hide() end
+
         if PROFILE.IsShow() == false then
 			PROFILE.Show()
 		else
@@ -129,6 +132,9 @@ function HUD_Initialize()
     Client.FireEvent("REQUEST_MONEY")
 
     HUD_book_button.onClick.Add(function()
+		if PASSIVE.IsShow() == true then PASSIVE.Hide() end
+		if PROFILE.IsShow() == true then PROFILE.Hide() end
+
         if DUNGEON.IsShow() == false then
 			DUNGEON.Show()
 		else
@@ -137,6 +143,9 @@ function HUD_Initialize()
     end)
 
     HUD_passive_button.onClick.Add(function()
+		if DUNGEON.IsShow() == true then DUNGEON.Hide() end
+		if PROFILE.IsShow() == true then PROFILE.Hide() end
+
         if PASSIVE.IsShow() == false then
 			PASSIVE.Show()
 		else
