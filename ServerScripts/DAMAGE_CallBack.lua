@@ -45,12 +45,16 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 		-- ¼º³­ È²¼Ò(³Ë¹é)
 		if attacker.monsterID == 0 then
 
-			defender.MakeKnockback(16, 0.3)
+			defender.MakeKnockback(32*2, 0.5)
 		end
 
 
-		-- ÃÊ·ÕÀÌ / È«»ïÀÌ
-		if attacker.monsterID == 2 or attacker.monsterID == 3 or attacker.monsterID == 4 then
+		-- ÃÊ·ÕÀÌ / È«ÀÏÀÌ / °í¶óµå / »õ¼øÀÌ
+		if  attacker.monsterID == 9 or
+			attacker.monsterID == 10 or
+			attacker.monsterID == 11 or
+			attacker.monsterID == 12
+			then
 			return math.max(attacker.magicAtk - defender.def, 1)
 		end
 
