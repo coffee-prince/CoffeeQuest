@@ -134,31 +134,125 @@ function DUNGEON_INIT ()
 
 	local texts = {}
 
-	texts[10] = Text("파밍을 하고 싶다면 지하 던전!\n커피 재료를 수집하고 싶다면 보스를 공략하세요.", Rect(55-13, 184, 227+27, 31))
+	texts[10] = Text("파밍을 하고 싶다면 지하 던전 클릭!\n커피 재료를 수집하고 싶다면 보스를 클릭!", Rect(55-13, 184, 227+27, 31))
 	texts[10].showOnTop = true
 	texts[10].color = Color(0, 0, 0, 255)
 	texts[10].textAlign = 4
 	texts[10].textSize = 12
+	texts[10].visible = false
+
+
+	texts[0] = Text("지하 던전", Rect(32, 11, 60, 18))
+	texts[0].showOnTop = true
+	texts[0].color = Color(0, 0, 0, 255)
+	texts[0].textAlign = 4
+	texts[0].textSize = 14
+	buttons[0].AddChild(texts[0])
+
+	texts[1] = Text("탐탐", Rect(32, 11, 60, 18))
+	texts[1].showOnTop = true
+	texts[1].color = Color(0, 0, 0, 255)
+	texts[1].textAlign = 4
+	texts[1].textSize = 14
+	buttons[1].AddChild(texts[1])
+
+	texts[2] = Text("보스2", Rect(32, 11, 60, 18))
+	texts[2].showOnTop = true
+	texts[2].color = Color(0, 0, 0, 255)
+	texts[2].textAlign = 4
+	texts[2].textSize = 14
+	buttons[2].AddChild(texts[2])
+
+	texts[3] = Text("보스3",  Rect(32, 11, 60, 18))
+	texts[3].showOnTop = true
+	texts[3].color = Color(0, 0, 0, 255)
+	texts[3].textAlign = 4
+	texts[3].textSize = 14
+	buttons[3].AddChild(texts[3])
+
+	texts[4] = Text("보스4",  Rect(32, 11, 60, 18))
+	texts[4].showOnTop = true
+	texts[4].color = Color(0, 0, 0, 255)
+	texts[4].textAlign = 4
+	texts[4].textSize = 14
+	buttons[4].AddChild(texts[4])
+
+	texts[5] = Text("보스5",  Rect(32, 11, 60, 18))
+	texts[5].showOnTop = true
+	texts[5].color = Color(0, 0, 0, 255)
+	texts[5].textAlign = 4
+	texts[5].textSize = 14
+	buttons[5].AddChild(texts[5])
+
+	texts[6] = Text("보스6",  Rect(32, 11, 60, 18))
+	texts[6].showOnTop = true
+	texts[6].color = Color(0, 0, 0, 255)
+	texts[6].textAlign = 4
+	texts[6].textSize = 14
+	buttons[6].AddChild(texts[6])
+
+	texts[7] = Text("보스7",  Rect(32, 11, 60, 18))
+	texts[7].showOnTop = true
+	texts[7].color = Color(0, 0, 0, 255)
+	texts[7].textAlign = 4
+	texts[7].textSize = 14
+	buttons[7].AddChild(texts[7])
+
+	texts[8] = Text("보스8",  Rect(32, 11, 60, 18))
+	texts[8].showOnTop = true
+	texts[8].color = Color(0, 0, 0, 255)
+	texts[8].textAlign = 4
+	texts[8].textSize = 14
+	buttons[8].AddChild(texts[8])
+
+	texts[9] = Text("보스9",  Rect(32, 11, 60, 18))
+	texts[9].showOnTop = true
+	texts[9].color = Color(0, 0, 0, 255)
+	texts[9].textAlign = 4
+	texts[9].textSize = 14
+	buttons[9].AddChild(texts[9])
 
 
 
 
-	local OFFSET_X_COFFEE_1 = 25
-	local OFFSET_Y_COFFEE_1 = 208
-	local WIDTH_COFFEE_1 = 140
-	local HEIGHT_COFFEE_1 = 121
 
-	local OFFSET_X_COFFEE_2 = 170
-	local OFFSET_Y_COFFEE_2 = 208
-	local WIDTH_COFFEE_2 = 140
-	local HEIGHT_COFFEE_2 = 121
+	local OFFSET_X_COFFEE_1 = 35
+	local OFFSET_Y_COFFEE_1 = 521
+	local WIDTH_COFFEE_1 = 124
+	local HEIGHT_COFFEE_1 = 38
 
-	local OFFSET_X_COFFEE_3 = 315
-	local OFFSET_Y_COFFEE_3 = 208
-	local WIDTH_COFFEE_3 = 140
-	local HEIGHT_COFFEE_3 = 121
+	local OFFSET_X_COFFEE_2 = 178
+	local OFFSET_Y_COFFEE_2 = 521
+	local WIDTH_COFFEE_2 = 124
+	local HEIGHT_COFFEE_2 = 38
+
+	local OFFSET_X_COFFEE_3 = 320
+	local OFFSET_Y_COFFEE_3 = 521
+	local WIDTH_COFFEE_3 = 124
+	local HEIGHT_COFFEE_3 = 38
 
 
+	local coffees = {}
+	coffees[1] = Image("Pictures/UI/coffee_1.png", Rect(OFFSET_X_COFFEE_1, OFFSET_Y_COFFEE_1, WIDTH_COFFEE_1, HEIGHT_COFFEE_1))
+	coffees[2] = Image("Pictures/UI/coffee_2.png", Rect(OFFSET_X_COFFEE_2, OFFSET_Y_COFFEE_2, WIDTH_COFFEE_2, HEIGHT_COFFEE_2))
+	coffees[3] = Image("Pictures/UI/coffee_3.png", Rect(OFFSET_X_COFFEE_3, OFFSET_Y_COFFEE_3, WIDTH_COFFEE_3, HEIGHT_COFFEE_3))
+	for i = 1, 3 do
+		coffees[i].showOnTop = true
+		coffees[i].visible = false
+	end
+
+
+	local maps = {}
+	maps[0] = 52
+	maps[1] = 52
+	maps[2] = 52
+	maps[3] = 52
+	maps[4] = 52
+	maps[5] = 52
+	maps[6] = 52
+	maps[7] = 52
+	maps[8] = 52
+	maps[9] = 52
 
 
 
@@ -177,6 +271,10 @@ function DUNGEON_INIT ()
 		for i = 0, 9 do
 			buttons[i].visible = true
 		end
+		for i = 1, 3 do
+			coffees[i].visible = true
+		end
+		texts[10].visible = true
 	end
 
 	fn.Hide = function()
@@ -186,11 +284,24 @@ function DUNGEON_INIT ()
 		for i = 0, 9 do
 			buttons[i].visible = false
 		end
+		for i = 1, 3 do
+			coffees[i].visible = false
+		end
+		texts[10].visible = false
 	end
+
+
 
 	UI_DUNGEON_CLOSE_BTN.onClick.Add(function()
 		fn.Hide()
 	end)
+
+	for i = 0, 9 do
+		buttons[i].onClick.Add(function()
+			Client.FireEvent("REQUEST_GO", maps[i])
+			fn.Hide()
+		end)
+	end
 
 
 	return fn
