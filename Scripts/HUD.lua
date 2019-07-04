@@ -129,10 +129,10 @@ function HUD_Initialize()
     Client.FireEvent("REQUEST_MONEY")
 
     HUD_book_button.onClick.Add(function()
-        if COFFEE.IsShow() == false then
-			COFFEE.Show()
+        if DUNGEON.IsShow() == false then
+			DUNGEON.Show()
 		else
-			COFFEE.Hide()
+			DUNGEON.Hide()
 		end
     end)
 

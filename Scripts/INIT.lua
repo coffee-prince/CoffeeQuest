@@ -10,7 +10,7 @@ Client.GetTopic("INIT").Add(function()
 
 		PROFILE = PROFILE_INIT()
 		PASSIVE = PASSIVE_INIT()
-		COFFEE = COFFEE_INIT()
+		DUNGEON = DUNGEON_INIT()
 	end, 1)
 
 end)
