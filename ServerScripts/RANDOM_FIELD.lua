@@ -16,7 +16,7 @@ Server.GetTopic("RANDOM_FIELD").Add(function()
 	field.SetFieldVar(0, ex)
 
 	for i = 1, ex do
-		local monster_id = math.random(7, 13)
+		local monster_id = math.random(7, 12)
 
 		local spawn_x = math.random(32 * 4, 32 * 28)
 		local spawn_y = math.random(-32 * 6, -32 * 18)
