@@ -58,3 +58,8 @@ function firstAttack(enemy,ai,event,data)
 end
 
 Server.SetMonsterAI(12, firstAttack) -- 1번몬스터에게 firstAttack 적용
+Server.SetMonsterAI(18, firstAttack) -- 1번몬스터에게 firstAttack 적용
+Server.SetMonsterAI(24, firstAttack) -- 1번몬스터에게 firstAttack 적용
+Server.SetMonsterAI(30, firstAttack) -- 1번몬스터에게 firstAttack 적용
+Server.SetMonsterAI(36, firstAttack) -- 1번몬스터에게 firstAttack 적용
+Server.SetMonsterAI(42, firstAttack) -- 1번몬스터에게 firstAttack 적용
