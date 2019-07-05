@@ -3,7 +3,7 @@
 --end)
 function REFRESH_STAT()
 	local DEFAULT_HP = 10
-	local ADD_HP = 11
+	local ADD_HP = 1
 
 	local DEFAULT_ATK = 1
 	local ADD_ATK = 1
