@@ -6,7 +6,7 @@ Server.GetTopic("RANDOM_FIELD").Add(function()
 		sum = sum + unit.CountItem(i) -- 패시브 개수
 	end
 
-	local level = math.floor(sum / 10)
+	local level = math.floor(sum / 25)
 	print("level: " .. level)
 
 	local ex = math.random(5, math.min(50, math.max(sum * 4, 10)))
