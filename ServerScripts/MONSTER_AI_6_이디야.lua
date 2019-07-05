@@ -23,14 +23,17 @@ function firstAttack(enemy,ai,event,data)
 
 
 		if ai.GetTargetUnit() ~= nil then
+			local target = ai.GetTargetUnit()
+            ai.MoveToPosition(target.x, enemy.y)
 
-            ai.SetFollowTarget(true)
-			target = ai.GetTargetUnit()
+            local skill = math.random(16, 18)
 
-			for i = 16, 18, 1 do
-				ai.UseSkill(i)
-				sleep(2)
-			end
+            ai.UseSkill(skill)
+
+            Server.RunLater(function()
+                local r_skill = math.random(16, 18)
+                ai.UseSkill(r_skill)
+            end, 1)
         end
 
         if ai.GetTargetUnit() == nil then

@@ -16,6 +16,16 @@ function AutoAttack()
 
 
     function auto(dt)
+		if Client.field.dataID == 51 then
+			if Camera.orthographicSize ~= 400 then
+				Camera.orthographicSize = 400
+			end
+		else
+			if Camera.orthographicSize ~= 200 then
+				Camera.orthographicSize = 200
+			end
+		end
+		
 		hpTime = hpTime + dt
 		attackTime = attackTime + dt
 
@@ -33,7 +43,7 @@ function AutoAttack()
 
 
         if prev_X ~= player.x or prev_y ~= player.y or target == nil or target.valid == false or target.dead == true then
-            target = Client.field.FindNearUnit(player.x, player.y, 32 * 6, 2)
+            target = Client.field.FindNearUnit(player.x, player.y, 32 * 9, 2)
 
 			prev_x = player.x
 			prev_y = player.y

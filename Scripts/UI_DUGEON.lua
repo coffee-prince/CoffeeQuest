@@ -249,7 +249,7 @@ function DUNGEON_INIT ()
 	maps[3] = 52
 	maps[4] = 52
 	maps[5] = 52
-	maps[6] = 52
+	maps[6] = 51
 	maps[7] = 52
 	maps[8] = 52
 	maps[9] = 52
