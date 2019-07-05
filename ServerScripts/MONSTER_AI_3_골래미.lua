@@ -32,6 +32,7 @@ function firstAttack(enemy,ai,event,data)
 
             if skill  == 19 then
                 ai.SetFollowTarget(true)
+                enemy.MakeKnockback(-200, 0.1)
                 ai.UseSkill(skill)
             else
                 ai.SetFollowTarget(false)
