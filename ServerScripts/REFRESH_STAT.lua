@@ -2,13 +2,13 @@
 	--enemy.say(1)
 --end)
 function REFRESH_STAT()
-	local DEFAULT_HP = 100
-	local ADD_HP = 10
+	local DEFAULT_HP = 10
+	local ADD_HP = 11
 
-	local DEFAULT_ATK = 5
+	local DEFAULT_ATK = 1
 	local ADD_ATK = 1
 
-	local DEFAULT_DEF = 5
+	local DEFAULT_DEF = 1
 	local ADD_DEF = 1
 
 	local DEFAULT_MOVE_SPEED = 150
