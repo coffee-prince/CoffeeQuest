@@ -13,4 +13,8 @@ Server.GetTopic("REQUEST_GO").Add(function(map_id)
 		unit.SpawnAtFieldID(map_id, 9 * 32, 13 * -32)
 	end
 
+	if map_id == 28 then
+		unit.SpawnAtFieldID(map_id, 11 * 32, 16 * -32)
+	end
+
 end)

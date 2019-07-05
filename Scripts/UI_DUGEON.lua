@@ -163,14 +163,14 @@ function DUNGEON_INIT ()
 	texts[2].textSize = 14
 	buttons[2].AddChild(texts[2])
 
-	texts[3] = Text("보스3",  Rect(32, 11, 60, 18))
+	texts[3] = Text("골래미",  Rect(32, 11, 60, 18))
 	texts[3].showOnTop = true
 	texts[3].color = Color(0, 0, 0, 255)
 	texts[3].textAlign = 4
 	texts[3].textSize = 14
 	buttons[3].AddChild(texts[3])
 
-	texts[4] = Text("보스4",  Rect(32, 11, 60, 18))
+	texts[4] = Text("스파이더",  Rect(32, 11, 60, 18))
 	texts[4].showOnTop = true
 	texts[4].color = Color(0, 0, 0, 255)
 	texts[4].textAlign = 4
@@ -184,7 +184,7 @@ function DUNGEON_INIT ()
 	texts[5].textSize = 14
 	buttons[5].AddChild(texts[5])
 
-	texts[6] = Text("보스6",  Rect(32, 11, 60, 18))
+	texts[6] = Text("이디야",  Rect(32, 11, 60, 18))
 	texts[6].showOnTop = true
 	texts[6].color = Color(0, 0, 0, 255)
 	texts[6].textAlign = 4
@@ -246,8 +246,8 @@ function DUNGEON_INIT ()
 	maps[0] = 52
 	maps[1] = 35
 	maps[2] = 52
-	maps[3] = 52
-	maps[4] = 52
+	maps[3] = 28
+	maps[4] = 28
 	maps[5] = 52
 	maps[6] = 51
 	maps[7] = 52

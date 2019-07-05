@@ -21,8 +21,8 @@ function AutoAttack()
 				Camera.orthographicSize = 400
 			end
 		else
-			if Camera.orthographicSize ~= 200 then
-				Camera.orthographicSize = 200
+			if Camera.orthographicSize ~= 300 then
+				Camera.orthographicSize = 300
 			end
 		end
 		
