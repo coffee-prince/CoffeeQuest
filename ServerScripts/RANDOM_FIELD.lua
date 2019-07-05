@@ -7,7 +7,6 @@ Server.GetTopic("RANDOM_FIELD").Add(function()
 	end
 
 	local level = math.floor(sum / 25)
-	print("level: " .. level)
 
 	local ex = math.random(5, math.min(50, math.max(sum * 4, 10)))
 	--local ex = math.random(5,200)
