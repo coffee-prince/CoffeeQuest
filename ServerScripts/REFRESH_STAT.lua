@@ -5,8 +5,8 @@ function REFRESH_STAT()
 	local DEFAULT_HP = 100
 	local ADD_HP = 10
 
-	local DEFAULT_ATK = 5
-	local ADD_ATK = 5
+	local DEFAULT_ATK = 3
+	local ADD_ATK = 3
 
 	local DEFAULT_DEF = 5
 	local ADD_DEF = 5
@@ -29,19 +29,19 @@ function REFRESH_STAT()
 	local DEFAULT_EVASION_PERCENT = 10
 	local ADD_EVASION_PERCENT = 1
 
-	local count_0 = unit.CountItem(0) -- ÃÖ´ë Ã¼·Â Áõ°¡
-	local count_1 = unit.CountItem(1) -- È¸º¹·® Áõ°¡
-	local count_2 = unit.CountItem(2) -- ÀÌµ¿ ¼Óµµ Áõ°¡
-	local count_3 = unit.CountItem(3) -- °ø°Ý ¼Óµµ Áõ°¡
-	local count_4 = unit.CountItem(4) -- °ø°Ý·Â Áõ°¡
-	local count_5 = unit.CountItem(5) -- ¹æ¾î·Â Áõ°¡
-	local count_6 = unit.CountItem(6) -- Ä¡¸íÅ¸ ÇÇÇØ·® Áõ°¡
-	local count_7 = unit.CountItem(7) -- Ä¡¸íÅ¸ È®·ü Áõ°¡
-	local count_8 = unit.CountItem(8) -- È¸ÇÇ È®·ü Áõ°¡
+	local count_0 = unit.CountItem(0) -- ï¿½Ö´ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	local count_1 = unit.CountItem(1) -- È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	local count_2 = unit.CountItem(2) -- ï¿½Ìµï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
+	local count_3 = unit.CountItem(3) -- ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
+	local count_4 = unit.CountItem(4) -- ï¿½ï¿½ï¿½Ý·ï¿½ ï¿½ï¿½ï¿½ï¿½
+	local count_5 = unit.CountItem(5) -- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	local count_6 = unit.CountItem(6) -- Ä¡ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½Ø·ï¿½ ï¿½ï¿½ï¿½ï¿½
+	local count_7 = unit.CountItem(7) -- Ä¡ï¿½ï¿½Å¸ È®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	local count_8 = unit.CountItem(8) -- È¸ï¿½ï¿½ È®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
 	--unit.moveSpeed = 500
-	-- Ã¼·Â(·¹º§¾÷)
+	-- Ã¼ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 	local prev_count_0 = unit.GetVar(100)
 
 	if count_0 > prev_count_0 then
@@ -49,28 +49,28 @@ function REFRESH_STAT()
 	end
 	unit.SetVar(100, count_0)
 
-	-- È¸º¹·® (MAGIC_DEFENSE = 3)
+	-- È¸ï¿½ï¿½ï¿½ï¿½ (MAGIC_DEFENSE = 3)
 	unit.SetStat(3, DEFAULT_HP_AMOUNT + ADD_HP_AMOUNT * count_1)
 
-	-- ÀÌµ¿ ¼Óµµ(moveSpeed)
+	-- ï¿½Ìµï¿½ ï¿½Óµï¿½(moveSpeed)
 	unit.moveSpeed = DEFAULT_MOVE_SPEED + ADD_MOVE_SPEED * count_2
 
-	-- °ø°Ý ¼Óµµ(AGILITY = 4)
+	-- ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½(AGILITY = 4)
 	unit.SetStat(4, DEFAULT_ATTACK_SPEED - SUB_ATTACK_SPEED * count_3)
 
-	-- °ø°Ý·Â(ATTACK = 0)
+	-- ï¿½ï¿½ï¿½Ý·ï¿½(ATTACK = 0)
 	unit.SetStat(0, DEFAULT_ATK + ADD_ATK * count_4)
 
-	-- ¹æ¾î·Â(DEFENSE = 1)
+	-- ï¿½ï¿½ï¿½ï¿½(DEFENSE = 1)
 	unit.SetStat(1, DEFAULT_DEF + ADD_DEF * count_5)
 
-	-- Å©¸®Æ¼ÄÃ ÇÇÇØ·® (MAGIC_ATTACK = 2)
+	-- Å©ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½Ø·ï¿½ (MAGIC_ATTACK = 2)
 	unit.SetStat(2, DEFAULT_CRITICAL_DAMAGE + ADD_CRITICAL_DAMAGE * count_6)
 
-	-- Å©¸®Æ¼ÄÃ È®·ü(LUCKY = 5)
+	-- Å©ï¿½ï¿½Æ¼ï¿½ï¿½ È®ï¿½ï¿½(LUCKY = 5)
 	unit.SetStat(5, DEFAULT_CRITICAL_PERCENT + ADD_CRITICAL_PERCENT * count_7)
 
-	-- È¸ÇÇ È®·ü (CUSTOM_1 = 101)
+	-- È¸ï¿½ï¿½ È®ï¿½ï¿½ (CUSTOM_1 = 101)
 	unit.SetStat(101, DEFAULT_EVASION_PERCENT + ADD_EVASION_PERCENT * count_8)
 
 

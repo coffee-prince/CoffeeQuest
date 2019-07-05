@@ -1,32 +1,32 @@
 Server.damageCallback = function(attacker, defender, damage, skillID)
 
-	-- Á¤·É1 ³Ë¹é
+	-- ï¿½ï¿½ï¿½ï¿½1 ï¿½Ë¹ï¿½
 	if skillID == 10 then
 		defender.MakeKnockback(32 * 2, 0.1)
 		return 0
 	end
 
-	-- Á¤·É2 ÈíÇ÷
+	-- ï¿½ï¿½ï¿½ï¿½2 ï¿½ï¿½ï¿½ï¿½
 	if skillID == 11 then
 		defender.AddHP(3)
 		defender.FireEvent("Heal", 1)
 		return 0
 	end
 
-	if attacker.type == 0 then -- ÇÃ·¹ÀÌ¾î°¡ °ø°ÝÇÏ´Â °æ¿ì
+	if attacker.type == 0 then -- ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
 
 
 		critical_percent = attacker.GetStat(5)
 		critical_damage  = attacker.GetStat(2)
 
-		-- Å©¸®Æ¼ÄÃ Àû¿ë
+		-- Å©ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		if math.random(1, 100) <= critical_percent then
 			d = math.max(attacker.atk - defender.def, 1)
 			return d * (critical_damage / 100)
 		end
 
 		if attacker.characterID == 1 then
-			defender.MakeKnockback(32 * 1.5, 0.1)
+			defender.MakeKnockback(32 * 3, 0.3)
 		end
 
 
@@ -34,22 +34,22 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 		return math.max(attacker.atk - defender.def, 1)
 	end
 
-	if attacker.type == 2 then -- ¸ó½ºÅÍ°¡ °ø°ÝÇÏ´Â °æ¿ì
+	if attacker.type == 2 then -- ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
 
 		evasion_percent = attacker.GetStat(101)
-		-- È¸ÇÇ Àû¿ë
+		-- È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		if math.random(1, 100) <= evasion_percent then
 			return 0
 		end
 
-		-- ¼º³­ È²¼Ò(³Ë¹é)
+		-- ï¿½ï¿½ï¿½ï¿½ È²ï¿½ï¿½(ï¿½Ë¹ï¿½)
 		if attacker.monsterID == 0 then
 
 			defender.MakeKnockback(32*2, 0.5)
 		end
 
 
-		-- ÃÊ·ÕÀÌ / È«ÀÏÀÌ / °í¶óµå / »õ¼øÀÌ
+		-- ï¿½Ê·ï¿½ï¿½ï¿½ / È«ï¿½ï¿½ï¿½ï¿½ / ï¿½ï¿½ï¿½ï¿½ / ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if  attacker.monsterID == 9 or
 			attacker.monsterID == 10 or
 			attacker.monsterID == 11 or
