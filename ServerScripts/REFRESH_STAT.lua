@@ -5,14 +5,14 @@ function REFRESH_STAT()
 	local DEFAULT_HP = 100
 	local ADD_HP = 10
 
-	local DEFAULT_ATK = 3
-	local ADD_ATK = 3
+	local DEFAULT_ATK = 5
+	local ADD_ATK = 1
 
 	local DEFAULT_DEF = 5
-	local ADD_DEF = 5
+	local ADD_DEF = 1
 
 	local DEFAULT_MOVE_SPEED = 150
-	local ADD_MOVE_SPEED = 5
+	local ADD_MOVE_SPEED = 1
 
 	local DEFAULT_ATTACK_SPEED = 150
 	local SUB_ATTACK_SPEED = 1
@@ -21,7 +21,7 @@ function REFRESH_STAT()
 	local ADD_CRITICAL_PERCENT = 1
 
 	local DEFAULT_CRITICAL_DAMAGE = 120
-	local ADD_CRITICAL_DAMAGE = 5
+	local ADD_CRITICAL_DAMAGE = 1
 
 	local DEFAULT_HP_AMOUNT = 1
 	local ADD_HP_AMOUNT = 1
