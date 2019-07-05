@@ -191,25 +191,25 @@ function DUNGEON_INIT ()
 	texts[6].textSize = 14
 	buttons[6].AddChild(texts[6])
 
-	texts[7] = Text("보스7",  Rect(32, 11, 60, 18))
+	texts[7] = Text("COMING SOON!",  Rect(22, 11, 80, 18))
 	texts[7].showOnTop = true
 	texts[7].color = Color(0, 0, 0, 255)
 	texts[7].textAlign = 4
-	texts[7].textSize = 14
+	texts[7].textSize = 10
 	buttons[7].AddChild(texts[7])
 
-	texts[8] = Text("보스8",  Rect(32, 11, 60, 18))
+	texts[8] = Text("COMING SOON!",  Rect(22, 11, 80, 18))
 	texts[8].showOnTop = true
 	texts[8].color = Color(0, 0, 0, 255)
 	texts[8].textAlign = 4
-	texts[8].textSize = 14
+	texts[8].textSize = 10
 	buttons[8].AddChild(texts[8])
 
-	texts[9] = Text("보스9",  Rect(32, 11, 60, 18))
+	texts[9] = Text("COMING SOON!",  Rect(22, 11, 80, 18))
 	texts[9].showOnTop = true
 	texts[9].color = Color(0, 0, 0, 255)
 	texts[9].textAlign = 4
-	texts[9].textSize = 14
+	texts[9].textSize = 10
 	buttons[9].AddChild(texts[9])
 
 
@@ -296,7 +296,7 @@ function DUNGEON_INIT ()
 		fn.Hide()
 	end)
 
-	for i = 0, 9 do
+	for i = 0, 6 do
 		buttons[i].onClick.Add(function()
 			Client.FireEvent("REQUEST_GO", maps[i])
 			fn.Hide()
