@@ -244,7 +244,7 @@ function DUNGEON_INIT ()
 
 	local maps = {}
 	maps[0] = 52
-	maps[1] = 52
+	maps[1] = 35
 	maps[2] = 52
 	maps[3] = 52
 	maps[4] = 52
@@ -253,8 +253,6 @@ function DUNGEON_INIT ()
 	maps[7] = 52
 	maps[8] = 52
 	maps[9] = 52
-
-
 
 
 	local fn = {}
