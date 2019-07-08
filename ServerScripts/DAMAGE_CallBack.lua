@@ -50,8 +50,10 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 
 
 		-- �ʷ��� / ȫ���� / ���� / ������
-		if  attacker.monsterID == 3 or
+		if  attacker.monsterID == 2 or
+		    attacker.monsterID == 3 or
 		    attacker.monsterID == 4 or
+		    attacker.monsterID == 5 or
 			attacker.monsterID == 6 or
 
 			attacker.monsterID == 9 or
