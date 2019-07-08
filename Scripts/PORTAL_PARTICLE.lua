@@ -20,7 +20,7 @@ function PORTAL_PARTICLE(posx,posy,id)
 
   -- 파티클 불 설정
   p.colorOverLifeTime = true
-  p.SetColorOverLifeTimeColor(0,Color(100, 149, 237,255))
+  p.SetColorOverLifeTimeColor(0,Color(255, 149, 237,255))
   p.RemoveColorOverLifeTimeColor(1);
   p.SetColorOverLifeTimeColorAlpha(0,0)
   p.AddColorOverLifeTimeAlpha(0.5,255)
@@ -51,7 +51,7 @@ function PORTAL_PARTICLE(posx,posy,id)
 
   -- 파티클 불 설정
   p2.colorOverLifeTime = true
-  p2.SetColorOverLifeTimeColor(0,Color(240,255,255,255))
+  p2.SetColorOverLifeTimeColor(0,Color(255,240,240,255))
   p2.RemoveColorOverLifeTimeColor(1);
   p2.SetColorOverLifeTimeColorAlpha(0,0)
   p2.AddColorOverLifeTimeAlpha(0.5,255)

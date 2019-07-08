@@ -2,6 +2,32 @@
 	--enemy.say(1)
 --end)
 function REFRESH_STAT()
+
+	local count_15 = unit.CountItem(15) -- 플레이어가 소지하고 있는 랜덤 박스 개수
+	local prev_count_15 = unit.GetVar(101) -- 플레이어가 이전에 소지하고 있던 랜덤 박스 개수
+
+	if count_15 > prev_count_15 then
+
+		for i = 1, count_15 - prev_count_15 do
+			-- 공격력 40%
+			-- 체력  30%
+			-- 나머지 30%
+			local percent = math.random(1, 100)
+
+			if percent <= 40 then
+				unit.AddItem(4)
+			elseif percent <= 70 then
+				unit.AddItem(0)
+			else
+				unit.AddItem(math.random(0, 8))
+			end
+		end
+
+
+	end
+	unit.SetVar(101, count_15)
+
+
 	local DEFAULT_HP = 100
 	local ADD_HP = 10
 
