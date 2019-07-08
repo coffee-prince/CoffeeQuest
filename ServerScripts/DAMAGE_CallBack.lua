@@ -26,7 +26,21 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 		end
 
 		if attacker.characterID == 1 then
-			defender.MakeKnockback(32 * 3, 0.3)
+			if defender.type == 2 then
+				if  defender.monsterID ~= 1 and
+					defender.monsterID ~= 2 and
+					defender.monsterID ~= 3 and
+					defender.monsterID ~= 4 and
+					defender.monsterID ~= 5 and
+					defender.monsterID ~= 6 then
+
+						defender.MakeKnockback(32 * 3, 0.3)
+						return 10
+				end
+			end
+
+			return 0
+
 		end
 
 
