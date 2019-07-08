@@ -10,22 +10,22 @@ Server.GetTopic("RANDOM_FIELD").Add(function()
 
 	if sum <= 10 then
 
-		level = 0
+		level = 0 --2 Å½Å½
 
 	elseif sum <= 25 then
-		level = 1
+		level = 1 --3 ÆÄ½ºÄíÄ¡
 
 	elseif sum <= 45 then
-		level = 2
+		level = 2 --4 Åõ½æ
 
-	elseif sum <= 65 then
-		level = 3
+	elseif sum <= 105 then
+		level = 3 --5 Ç®¹Ù³Ý
 
-	elseif sum <= 85 then
-		level = 4
+	elseif sum <= 145 then
+		level = 4 --6 ÇÒ¸®½º
 
 	else
-		level = 5
+		level = 5 --7 ÀÌµð¾ß
 	end
 
 
