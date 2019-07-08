@@ -1,9 +1,3 @@
-local clock = os.clock
-function sleep(n)
-  local t0 = clock()
-  while clock() - t0 <= n do end
-end
-
 function firstAttack(enemy,ai,event,data)
     if (event == 0) then --
 
@@ -23,13 +17,13 @@ function firstAttack(enemy,ai,event,data)
 
 
 		if ai.GetTargetUnit() ~= nil then
-			local target = ai.GetTargetUnit()
-            ai.MoveToPosition(target.x, enemy.y)
 
-            local skill = math.random(23, 25)
+			ai.SetFollowTarget(true)
 
-            ai.UseSkill(skill)
-        end
+			local skill = math.random(23, 25)
+			ai.UseSkill(skill)
+
+		end
 
         if ai.GetTargetUnit() == nil then
             return
