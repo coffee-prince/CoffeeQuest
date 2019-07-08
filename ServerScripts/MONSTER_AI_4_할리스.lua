@@ -20,7 +20,7 @@ function firstAttack(enemy,ai,event,data)
 			local _x = target.x - enemy.x
 			local _y = target.y - enemy.y
 
-			ai.SetFollowTarget(false)
+			--ai.SetFollowTarget(false)
 
 			local r = math.random(26, 46)
 			--for i = 1, 10 do
@@ -31,7 +31,7 @@ function firstAttack(enemy,ai,event,data)
 			local ex = math.random(1, 5)
 
 			for i = 1, ex do
-				target.field.SpawnEnemy(45, x+math.random(-32 * 5, 32 * 5), y + math.random(-32, -32 * 7))
+				target.field.SpawnEnemy(45, x+math.random(-32 * 5, 32 * 5), y + math.random(-32, -32 * 5))
 			end
 
 		end
