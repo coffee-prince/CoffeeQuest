@@ -17,10 +17,43 @@ function firstAttack(enemy,ai,event,data)
 
 
 		if ai.GetTargetUnit() ~= nil then
+			local target = ai.GetTargetUnit()
+			local x = enemy.x
+			local y = enemy.y
+			local _x = target.x - enemy.x
+			local _y = target.y - enemy.y
 
-			ai.SetFollowTarget(true)
+			local d = ai.DistanceSquard(x, _x, y, _y)
 
 			local skill = math.random(23, 25)
+
+			ai.SetFollowTarget(false)
+
+			if skill == 25 then
+
+				target.field.SpawnEnemy(44, x+1, y)
+				target.field.SpawnEnemy(44, x-1, y)
+				target.field.SpawnEnemy(44, x, y+1)
+				target.field.SpawnEnemy(44, x, y-1)
+				return
+			end
+
+			if skill == 23 then
+				for i = 1, 10 do
+					ai.UseSkill(skill, Point( x * math.cos(math.rad(i *36)), y * math.sin(math.rad(i * 36)) ))
+				end
+
+
+
+				return
+			end
+
+			if skill == 24 then
+				ai.SetFollowTarget(true)
+			end
+
+
+
 			ai.UseSkill(skill)
 
 		end
