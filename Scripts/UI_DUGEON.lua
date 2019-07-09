@@ -232,11 +232,27 @@ function DUNGEON_INIT ()
 	local HEIGHT_COFFEE_3 = 38
 
 
+	local isBoss1 = false
+	local isBoss2 = false
+	local isBoss3 = false
+
+	Client.GetTopic("KILL_BOSS_REQUEST").Add(function(boss1, boss2, boss3, boss4, boss5, boss6)
+		isBoss1 = (boss1 + boss4 == 2)
+		isBoss2 = (boss2 + boss5 == 2)
+		isBoss3 = (boss3 + boss6 == 2)
+	end)
+
+
+
 	local coffees = {}
 	coffees[1] = Image("Pictures/UI/coffee_1.png", Rect(OFFSET_X_COFFEE_1, OFFSET_Y_COFFEE_1, WIDTH_COFFEE_1, HEIGHT_COFFEE_1))
 	coffees[2] = Image("Pictures/UI/coffee_2.png", Rect(OFFSET_X_COFFEE_2, OFFSET_Y_COFFEE_2, WIDTH_COFFEE_2, HEIGHT_COFFEE_2))
 	coffees[3] = Image("Pictures/UI/coffee_3.png", Rect(OFFSET_X_COFFEE_3, OFFSET_Y_COFFEE_3, WIDTH_COFFEE_3, HEIGHT_COFFEE_3))
-	for i = 1, 3 do
+	coffees[4] = Image("Pictures/UI/non_1.png", Rect(OFFSET_X_COFFEE_1, OFFSET_Y_COFFEE_1, WIDTH_COFFEE_1, HEIGHT_COFFEE_1))
+	coffees[5] = Image("Pictures/UI/non_2.png", Rect(OFFSET_X_COFFEE_2, OFFSET_Y_COFFEE_2, WIDTH_COFFEE_2, HEIGHT_COFFEE_2))
+	coffees[6] = Image("Pictures/UI/non_3.png", Rect(OFFSET_X_COFFEE_3, OFFSET_Y_COFFEE_3, WIDTH_COFFEE_3, HEIGHT_COFFEE_3))
+
+	for i = 1, 6 do
 		coffees[i].showOnTop = true
 		coffees[i].visible = false
 	end
@@ -267,9 +283,11 @@ function DUNGEON_INIT ()
 		for i = 0, 9 do
 			buttons[i].visible = true
 		end
-		for i = 1, 3 do
-			coffees[i].visible = true
-		end
+
+		if isBoss1 == true then coffees[1].visible = true else coffees[4].visible = true end
+		if isBoss2 == true then coffees[2].visible = true else coffees[5].visible = true end
+		if isBoss3 == true then coffees[3].visible = true else coffees[6].visible = true end
+
 		texts[10].visible = true
 	end
 
@@ -280,7 +298,7 @@ function DUNGEON_INIT ()
 		for i = 0, 9 do
 			buttons[i].visible = false
 		end
-		for i = 1, 3 do
+		for i = 1, 6 do
 			coffees[i].visible = false
 		end
 		texts[10].visible = false
