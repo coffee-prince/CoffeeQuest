@@ -24,8 +24,11 @@ Server.GetTopic("RANDOM_FIELD").Add(function()
 	elseif sum <= 145 then
 		level = 4 --6 할리스
 
+	elseif sum <= 201 then
+		level = 5 --7 이디�
+
 	else
-		level = 5 --7 이디야
+		level = 6
 	end
 
 
