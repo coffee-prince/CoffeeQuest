@@ -45,7 +45,7 @@ Server.GetTopic("RANDOM_FIELD").Add(function()
 		monster_id = monster_id  + 5 * math.random(0, math.min(level, 6))
 
 		if level >= 3 then
-			monster_id = monster_id  + 5 * math.random(1, 5)
+			monster_id = monster_id  + 5 * math.random(1, 6)
 		end
 
 

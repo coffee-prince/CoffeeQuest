@@ -51,4 +51,4 @@ function firstAttack(enemy,ai,event,data)
 
 end
 
-Server.SetMonsterAI(45, firstAttack) -- 1번몬스터에게 firstAttack 적용
+--Server.SetMonsterAI(45, firstAttack) -- 1번몬스터에게 firstAttack 적용

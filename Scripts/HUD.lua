@@ -67,8 +67,8 @@ function HUD_Initialize()
     money_txt.textAlign = 5  -- 오른쪽중앙정렬
     money_txt.color = Color(255, 134, 81, 255)
 
-	local OFFSET_X_DASH = 0
-	local OFFSET_Y_DASH = 0
+	local OFFSET_X_DASH = 366
+	local OFFSET_Y_DASH = 509
 	local WIDTH_DASH = 80
 	local HEIGHT_DASH = 80
 
@@ -76,9 +76,24 @@ function HUD_Initialize()
 	local dash_button_image = Image("Pictures/HUD/dash.png", Rect(0, 0, WIDTH_DASH, HEIGHT_DASH))
 	local dash_image = Image("Pictures/HUD/dash_cool.png", Rect(0, 0, WIDTH_DASH, HEIGHT_DASH))
 
+	dash_image.fillMethod = 4
+	dash_image.fillClockwise = true
+	dash_image.fillAmount = 0.7
+
+	Client.onTick.Add(function()
+		local ct = Client.myPlayerUnit.GetSkillCooling(1)
+
+		dash_image.SetOpacity(255 * (ct / 0.5) )
+
+	end, 1)
+
+
+	dash_button.addChild(dash_button_image)
 	dash_button.addChild(dash_image)
+
+	dash_button.SetOpacity(0)
 	dash_button.showOnTop = true
-	dash_image.showOnTop = true
+
 
     HUD_background.showOnTop = true
     HUD_hp.showOnTop = true
@@ -165,6 +180,14 @@ function HUD_Initialize()
 			PASSIVE.Hide()
 		end
     end)
+
+	dash_button.onClick.Add(function()
+		local ct = Client.myPlayerUnit.GetSkillCooling(1)
+
+		if ct <= 0 then
+			Client.myPlayerUnit.UseSkill(1)
+		end
+	end)
 
     Client.onTick.Add(hp_update, 30)
 
