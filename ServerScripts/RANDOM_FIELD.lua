@@ -24,8 +24,11 @@ Server.GetTopic("RANDOM_FIELD").Add(function()
 	elseif sum <= 145 then
 		level = 4 --6 할리스
 
+	elseif sum <= 201 then
+		level = 5 --7 이디�
+
 	else
-		level = 5 --7 이디야
+		level = 6
 	end
 
 
@@ -42,7 +45,7 @@ Server.GetTopic("RANDOM_FIELD").Add(function()
 		monster_id = monster_id  + 5 * math.random(0, math.min(level, 6))
 
 		if level >= 3 then
-			monster_id = monster_id  + 5 * math.random(1, 6)
+			monster_id = monster_id  + 5 * math.random(1, 5)
 		end
 
 
