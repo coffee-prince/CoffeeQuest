@@ -45,13 +45,16 @@ function firstAttack(enemy,ai,event,data)
 			local target = ai.GetTargetUnit()
 			local x = enemy.x
 			local y = enemy.y
-			local _x = target.x - enemy.x
-			local _y = target.y - enemy.y
+			local _x = target.x
+			local _y = target.y
 
 			local r = math.random(26, 46)
 
+			local t = math.atan2(x - _x, y - _y)
+
+
 			for i = 1, 6 do
-				ai.UseSkill(22, Point(x * math.cos(math.rad(i * r)), y * math.sin(math.rad(i * r)) ))
+				ai.UseSkill(22, Point(x *  math.cos(t + math.rad(i * r)), y * math.sin(t + math.rad(i * r)) ))
 			end
 
 			ai.UseSkill(21)

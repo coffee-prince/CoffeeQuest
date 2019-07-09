@@ -67,6 +67,19 @@ function HUD_Initialize()
     money_txt.textAlign = 5  -- 오른쪽중앙정렬
     money_txt.color = Color(255, 134, 81, 255)
 
+	local OFFSET_X_DASH = 0
+	local OFFSET_Y_DASH = 0
+	local WIDTH_DASH = 80
+	local HEIGHT_DASH = 80
+
+	local dash_button = Button("", Rect(OFFSET_X_DASH, OFFSET_Y_DASH, WIDTH_DASH, HEIGHT_DASH))
+	local dash_button_image = Image("Pictures/HUD/dash.png", Rect(0, 0, WIDTH_DASH, HEIGHT_DASH))
+	local dash_image = Image("Pictures/HUD/dash_cool.png", Rect(0, 0, WIDTH_DASH, HEIGHT_DASH))
+
+	dash_button.addChild(dash_image)
+	dash_button.showOnTop = true
+	dash_image.showOnTop = true
+
     HUD_background.showOnTop = true
     HUD_hp.showOnTop = true
     HUD_profile_button.showOnTop = true
