@@ -11,6 +11,7 @@ Client.GetTopic("INIT").Add(function()
 		PROFILE = PROFILE_INIT()
 		PASSIVE = PASSIVE_INIT()
 		DUNGEON = DUNGEON_INIT()
+		BOSS = BOSS_INIT()
 	end, 1)
 
 end)

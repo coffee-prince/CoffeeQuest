@@ -68,7 +68,7 @@ function HUD_Initialize()
     money_txt.color = Color(255, 134, 81, 255)
 
 	local OFFSET_X_DASH = 366
-	local OFFSET_Y_DASH = 509
+	local OFFSET_Y_DASH = 570
 	local WIDTH_DASH = 80
 	local HEIGHT_DASH = 80
 
@@ -160,6 +160,9 @@ function HUD_Initialize()
     Client.FireEvent("REQUEST_MONEY")
 
     HUD_book_button.onClick.Add(function()
+
+		if Client.field.dataID ~= 1 then return end
+
 		if PASSIVE.IsShow() == true then PASSIVE.Hide() end
 		if PROFILE.IsShow() == true then PROFILE.Hide() end
 

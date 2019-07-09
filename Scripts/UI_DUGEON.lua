@@ -134,7 +134,7 @@ function DUNGEON_INIT ()
 
 	local texts = {}
 
-	texts[10] = Text("파밍을 하고 싶다면 지하 던전 클릭!\n커피 재료를 수집하고 싶다면 보스를 클릭!", Rect(55-13, 184, 227+27, 31))
+	texts[10] = Text("파밍을 하고 싶다면 랜덤 던전 클릭!\n커피 재료를 수집하고 싶다면 보스를 클릭!", Rect(55-13, 184, 227+27, 31))
 	texts[10].showOnTop = true
 	texts[10].color = Color(0, 0, 0, 255)
 	texts[10].textAlign = 4
@@ -142,7 +142,7 @@ function DUNGEON_INIT ()
 	texts[10].visible = false
 
 
-	texts[0] = Text("지하 던전", Rect(32, 11, 60, 18))
+	texts[0] = Text("랜덤 던전", Rect(32, 11, 60, 18))
 	texts[0].showOnTop = true
 	texts[0].color = Color(0, 0, 0, 255)
 	texts[0].textAlign = 4
@@ -243,7 +243,7 @@ function DUNGEON_INIT ()
 
 
 	local maps = {}
-	maps[0] = 52 -- 파밍 던전
+	maps[0] = 0 -- 파밍 던전
 	maps[1] = 35 -- 탐탐
 	maps[2] = 53 -- 폴바셋
 	maps[3] = 28 -- 골래미
@@ -292,7 +292,19 @@ function DUNGEON_INIT ()
 		fn.Hide()
 	end)
 
-	for i = 0, 6 do
+	buttons[0].onClick.Add(function()
+		local r = math.random(1, 3)
+
+		if r < 3 then
+			Client.FireEvent("REQUEST_GO", 52)
+			fn.Hide()
+		elseif r == 3 then
+			Client.FireEvent("REQUEST_GO", 57)
+			fn.Hide()
+		end
+	end)
+
+	for i = 1, 6 do
 		buttons[i].onClick.Add(function()
 			Client.FireEvent("REQUEST_GO", maps[i])
 			fn.Hide()

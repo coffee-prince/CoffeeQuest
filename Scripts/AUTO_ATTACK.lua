@@ -16,7 +16,8 @@ function AutoAttack()
 
 
     function auto(dt)
-		if Client.field.dataID == 51 then
+		local fieldID = Client.field.dataID
+		if fieldID == 51 then
 			if Camera.orthographicSize ~= 400 then
 				Camera.orthographicSize = 400
 			end
@@ -25,7 +26,7 @@ function AutoAttack()
 				Camera.orthographicSize = 300
 			end
 		end
-		
+
 		hpTime = hpTime + dt
 		attackTime = attackTime + dt
 
@@ -64,7 +65,11 @@ function AutoAttack()
 		--player.useSkill(1, Point(target.x, target.y))
 
 
-		player.UseSkill(skillID, Point(target.x - player.x, target.y - player.y))
+		if fieldID == 57 then
+			player.UseSkill(29, Point(target.x - player.x, target.y - player.y))
+		else
+			player.UseSkill(0, Point(target.x - player.x, target.y - player.y))
+		end
     end
 
 

@@ -30,7 +30,7 @@ function firstAttack(enemy,ai,event,data)
 			ai.SetFollowTarget(false)
 
 			if skill == 25 then
-
+				ai.UseSkill(25)
 				target.field.SpawnEnemy(50, x+1, y)
 				target.field.SpawnEnemy(50, x-1, y)
 				target.field.SpawnEnemy(50, x, y+1)
