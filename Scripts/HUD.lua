@@ -68,7 +68,7 @@ function HUD_Initialize()
     money_txt.color = Color(255, 134, 81, 255)
 
 	local OFFSET_X_DASH = 366
-	local OFFSET_Y_DASH = 509
+	local OFFSET_Y_DASH = 570
 	local WIDTH_DASH = 80
 	local HEIGHT_DASH = 80
 
