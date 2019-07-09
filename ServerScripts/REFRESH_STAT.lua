@@ -16,7 +16,7 @@ function REFRESH_STAT()
 
 			if percent <= 40 then
 				unit.AddItem(4)
-			elseif percent <= 70 then
+			elseif percent <= 40 then
 				unit.AddItem(0)
 			else
 				unit.AddItem(math.random(0, 8))
@@ -29,7 +29,7 @@ function REFRESH_STAT()
 
 
 	local DEFAULT_HP = 100
-	local ADD_HP = 10
+	local ADD_HP = 20
 
 	local DEFAULT_ATK = 5
 	local ADD_ATK = 1
