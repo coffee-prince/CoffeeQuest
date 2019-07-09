@@ -2,7 +2,11 @@ Server.GetTopic("REQUEST_GO").Add(function(map_id)
 	print(map_id)
 
 	if map_id == 52 then -- 파밍던전
-		unit.SpawnAtFieldID(map_id, 14 * 32, 17 * -32)
+		unit.SpawnAtFieldID(map_id, 16 * 32, 24 * -32)
+	end
+
+	if map_id == 57 then -- 슬라임
+		unit.SpawnAtFieldID(map_id, 12 * 32, 13 * -32)
 	end
 
 	if map_id == 35 then -- 탐탐

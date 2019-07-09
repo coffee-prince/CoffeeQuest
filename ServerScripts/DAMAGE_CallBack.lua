@@ -10,6 +10,7 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 				if  defender.monsterID == 6 then return 10 end
 
 		defender.MakeKnockback(32 * 5, 0.1)
+
 		return 0
 	end
 
@@ -18,6 +19,11 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 		defender.AddHP(3)
 		defender.FireEvent("Heal", 1)
 		return 0
+	end
+
+	if skillID == 29 then
+		return 1
+
 	end
 
 	if attacker.type == 0 then -- �÷��̾ �����ϴ� ���
