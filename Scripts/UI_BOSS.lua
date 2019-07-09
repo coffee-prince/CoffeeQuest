@@ -24,7 +24,7 @@ function BOSS_INIT ()
 	local UI_ICON = Image("Pictures/HUD/boss_icon.png", Rect(OFFSET_X_ICON, OFFSET_Y_ICON, WIDTH_ICON, HEIGHT_ICON))
 	local hp_txt = Text("sd ", Rect(OFFSET_X_HP, OFFSET_Y_HP, WIDTH_HP, HEIGHT_HP))
 	hp_txt.textAlign = 4     -- Áß¾ÓÁ¤·Ä
-	hp_txt.color = Color(0, 0, 0, 255)
+	hp_txt.color = Color(255, 255, 255, 255)
 
 	UI_BAR.showOnTop = true
 	UI_HP.showOnTop = true

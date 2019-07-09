@@ -293,7 +293,7 @@ function DUNGEON_INIT ()
 	end)
 
 	buttons[0].onClick.Add(function()
-		local r = math.random(1, 3)
+		local r = math.random(3, 3)
 
 		if r < 3 then
 			Client.FireEvent("REQUEST_GO", 52)
