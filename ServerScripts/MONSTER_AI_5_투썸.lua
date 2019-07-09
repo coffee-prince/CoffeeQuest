@@ -31,10 +31,10 @@ function firstAttack(enemy,ai,event,data)
 
 			if skill == 25 then
 
-				target.field.SpawnEnemy(44, x+1, y)
-				target.field.SpawnEnemy(44, x-1, y)
-				target.field.SpawnEnemy(44, x, y+1)
-				target.field.SpawnEnemy(44, x, y-1)
+				target.field.SpawnEnemy(50, x+1, y)
+				target.field.SpawnEnemy(50, x-1, y)
+				target.field.SpawnEnemy(50, x, y+1)
+				target.field.SpawnEnemy(50, x, y-1)
 				return
 			end
 

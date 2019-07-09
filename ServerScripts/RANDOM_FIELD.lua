@@ -39,7 +39,12 @@ Server.GetTopic("RANDOM_FIELD").Add(function()
 
 	for i = 1, ex do
 		local monster_id = math.random(7, 12)
-		monster_id = monster_id  + 5 * math.random(0, math.min(level, 5))
+		monster_id = monster_id  + 5 * math.random(0, math.min(level, 6))
+
+		if level >= 3 then
+			monster_id = monster_id  + 5 * math.random(1, 6)
+		end
+
 
 		--print(monster_id)
 
