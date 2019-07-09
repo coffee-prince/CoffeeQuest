@@ -236,10 +236,12 @@ function DUNGEON_INIT ()
 	local isBoss2 = false
 	local isBoss3 = false
 
-	Client.GetTopic("KILL_BOSS_REQUEST").Add(function(boss1, boss2, boss3, boss4, boss5, boss6)
+	Client.GetTopic("KILL_BOSS_RESPONSE").Add(function(boss1, boss2, boss3, boss4, boss5, boss6)
 		isBoss1 = (boss1 + boss4 == 2)
 		isBoss2 = (boss2 + boss5 == 2)
 		isBoss3 = (boss3 + boss6 == 2)
+
+
 	end)
 
 
