@@ -10,22 +10,22 @@ Server.GetTopic("RANDOM_FIELD").Add(function()
 
 	if sum <= 10 then
 
-		level = 0
+		level = 0 --2 Å½Å½
 
 	elseif sum <= 25 then
-		level = 1
+		level = 1 --3 ÆÄ½ºÄíÄ¡
 
 	elseif sum <= 45 then
-		level = 2
+		level = 2 --4 Åõ½æ
 
-	elseif sum <= 65 then
-		level = 3
+	elseif sum <= 105 then
+		level = 3 --5 Ç®¹Ù³Ý
 
-	elseif sum <= 85 then
-		level = 4
+	elseif sum <= 145 then
+		level = 4 --6 ÇÒ¸®½º
 
 	else
-		level = 5
+		level = 5 --7 ÀÌµð¾ß
 	end
 
 
@@ -39,7 +39,12 @@ Server.GetTopic("RANDOM_FIELD").Add(function()
 
 	for i = 1, ex do
 		local monster_id = math.random(7, 12)
-		monster_id = monster_id  + 5 * math.random(0, math.min(level, 5))
+		monster_id = monster_id  + 5 * math.random(0, math.min(level, 6))
+
+		if level >= 3 then
+			monster_id = monster_id  + 5 * math.random(1, 6)
+		end
+
 
 		--print(monster_id)
 

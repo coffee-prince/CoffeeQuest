@@ -2,6 +2,13 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 
 	-- ����1 �˹�
 	if skillID == 10 then
+				if  defender.monsterID == 1 then return 10 end
+				if  defender.monsterID == 2 then return 10 end
+				if  defender.monsterID == 3 then return 10 end
+				if  defender.monsterID == 4 then return 10 end
+				if  defender.monsterID == 5 then return 10 end
+				if  defender.monsterID == 6 then return 10 end
+
 		defender.MakeKnockback(32 * 2, 0.1)
 		return 0
 	end
@@ -25,9 +32,7 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 			return d * (critical_damage / 100)
 		end
 
-		if attacker.characterID == 1 then
-			defender.MakeKnockback(32 * 3, 0.3)
-		end
+
 
 
 
@@ -50,8 +55,10 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 
 
 		-- �ʷ��� / ȫ���� / ���� / ������
-		if  attacker.monsterID == 3 or
+		if  attacker.monsterID == 2 or
+		    attacker.monsterID == 3 or
 		    attacker.monsterID == 4 or
+		    attacker.monsterID == 5 or
 			attacker.monsterID == 6 or
 
 			attacker.monsterID == 9 or

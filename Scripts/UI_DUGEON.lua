@@ -156,28 +156,28 @@ function DUNGEON_INIT ()
 	texts[1].textSize = 14
 	buttons[1].AddChild(texts[1])
 
-	texts[2] = Text("보스2", Rect(32, 11, 60, 18))
+	texts[2] = Text("폴바셋", Rect(32, 11, 60, 18))
 	texts[2].showOnTop = true
 	texts[2].color = Color(0, 0, 0, 255)
 	texts[2].textAlign = 4
 	texts[2].textSize = 14
 	buttons[2].AddChild(texts[2])
 
-	texts[3] = Text("골래미",  Rect(32, 11, 60, 18))
+	texts[3] = Text("파스쿠찌",  Rect(32, 11, 60, 18))
 	texts[3].showOnTop = true
 	texts[3].color = Color(0, 0, 0, 255)
 	texts[3].textAlign = 4
 	texts[3].textSize = 14
 	buttons[3].AddChild(texts[3])
 
-	texts[4] = Text("스파이더",  Rect(32, 11, 60, 18))
+	texts[4] = Text("할리스",  Rect(32, 11, 60, 18))
 	texts[4].showOnTop = true
 	texts[4].color = Color(0, 0, 0, 255)
 	texts[4].textAlign = 4
 	texts[4].textSize = 14
 	buttons[4].AddChild(texts[4])
 
-	texts[5] = Text("보스5",  Rect(32, 11, 60, 18))
+	texts[5] = Text("투썸",  Rect(32, 11, 60, 18))
 	texts[5].showOnTop = true
 	texts[5].color = Color(0, 0, 0, 255)
 	texts[5].textAlign = 4
@@ -243,16 +243,14 @@ function DUNGEON_INIT ()
 
 
 	local maps = {}
-	maps[0] = 52
-	maps[1] = 35
-	maps[2] = 52
-	maps[3] = 28
-	maps[4] = 28
-	maps[5] = 52
-	maps[6] = 51
-	maps[7] = 52
-	maps[8] = 52
-	maps[9] = 52
+	maps[0] = 52 -- 파밍 던전
+	maps[1] = 35 -- 탐탐
+	maps[2] = 53 -- 폴바셋
+	maps[3] = 28 -- 골래미
+	maps[4] = 55 -- 할리스
+	maps[5] = 56 -- 눈탱이
+	maps[6] = 51 -- 이디야
+
 
 
 	local fn = {}
