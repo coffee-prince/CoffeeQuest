@@ -102,6 +102,16 @@ function HUD_Initialize()
     hp_txt.showOnTop = true
     money_txt.showOnTop = true
 
+	local OFFSET_X_INFO = 294
+    local OFFSET_Y_INFO = 25
+    local WIDTH_INFO = 22
+    local HEIGHT_INFO = 22
+
+	local info_button = Button("", Rect(OFFSET_X_INFO, OFFSET_Y_INFO, WIDTH_INFO, HEIGHT_INFO))
+	local info_img = Image("Pictures/HUD/info_button.png", Rect(0, 0, WIDTH_INFO, HEIGHT_INFO))
+	info_button.addChild(info_img)
+	info_button.SetOpacity(0)
+	info_button.showOnTop = true
 
 	Client.FireEvent("REFRESH_STAT", 1)
 
@@ -142,6 +152,7 @@ function HUD_Initialize()
     HUD_profile_button.onClick.Add(function()
 		if DUNGEON.IsShow() == true then DUNGEON.Hide() end
 		if PASSIVE.IsShow() == true then PASSIVE.Hide() end
+		if INFO.IsShow() == true then INFO.Hide() end
 
         if PROFILE.IsShow() == false then
 			PROFILE.Show()
@@ -149,6 +160,18 @@ function HUD_Initialize()
 			PROFILE.Hide()
 		end
     end)
+
+	info_button.onClick.Add(function()
+		if DUNGEON.IsShow() == true then DUNGEON.Hide() end
+		if PROFILE.IsShow() == true then PROFILE.Hide() end
+		if PASSIVE.IsShow() == true then PASSIVE.Hide() end
+
+		if INFO.IsShow() == false then
+			INFO.Show()
+		else
+			INFO.Hide()
+		end
+	end)
 
     Client.GetTopic("MONEY_CHANGE").Add(function(money)
         player_money = money
@@ -165,6 +188,7 @@ function HUD_Initialize()
 
 		if PASSIVE.IsShow() == true then PASSIVE.Hide() end
 		if PROFILE.IsShow() == true then PROFILE.Hide() end
+		if INFO.IsShow() == true then INFO.Hide() end
 
         if DUNGEON.IsShow() == false then
 			DUNGEON.Show()
@@ -176,6 +200,7 @@ function HUD_Initialize()
     HUD_passive_button.onClick.Add(function()
 		if DUNGEON.IsShow() == true then DUNGEON.Hide() end
 		if PROFILE.IsShow() == true then PROFILE.Hide() end
+		if INFO.IsShow() == true then INFO.Hide() end
 
         if PASSIVE.IsShow() == false then
 			PASSIVE.Show()

@@ -1,4 +1,3 @@
-
 function firstAttack(enemy,ai,event,data)
     if (event == 0) then -- 2초마다 실행되는 이벤트
 
@@ -15,25 +14,31 @@ function firstAttack(enemy,ai,event,data)
 
             ai.SetFollowTarget(false) --타겟이 사라졌으면 추적을 비활성화
             ai.SetTargetUnit(nil)
-            ai.SetNearTarget(0,400)
+            ai.SetNearTarget(0,200)
         end
 
 
         if ai.GetTargetUnit() ~= nil then
 
 			target = ai.GetTargetUnit()
-			 ai.SetTargetUnit(target)
-			ai.SetFollowTarget(true)
-			d = ai.Distance(enemy.x, enemy.y, target.x, target.y)
 
-			--ai.MoveToPosition(target.x , target.y)
+			local _x = target.x - enemy.x
+			local _y = target.y - enemy.y
 
-			ai.UseSkill(3)
-			enemy.MakeKnockback(-200, 0.1)
+			ai.UseSkill(14, Point(_x, _y))
+
+			Server.RunLater(function()
+				ai.UseSkill(31, Point(_x, _y))
+				 ai.SetTargetUnit(nil)
+			end, 1)
+
+			--ai.MoveToPosition(target.x + math.random(-32 * 3, 32 * 3), target.y + math.random(-32 * 3, 32 * 3))
 
 
-
-
+			--Server.RunLater(function()
+				--enemy.Say(111)
+				--ai.UseSkill(4)
+			--end, 1)
 
 
         end
@@ -52,4 +57,5 @@ function firstAttack(enemy,ai,event,data)
 
 end
 
-Server.SetMonsterAI(1, firstAttack) -- 1번몬스터에게 firstAttack 적용
+Server.SetMonsterAI(89, firstAttack) -- 1번몬스터에게 firstAttack 적용
+

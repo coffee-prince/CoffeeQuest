@@ -1,59 +1,34 @@
 function firstAttack(enemy,ai,event,data)
+
+	if(event == AI_INIT) then
+		ai.customData.prev = 0
+		ai.customData.count = 0
+    end
+
     if (event == 0) then
-
         if enemy.field.playerCount <=0 then
-
             ai.SetTargetUnit(nil)
-
         elseif (ai.GetTargetUnit()==nil) then
-
             ai.SetNearTarget(0,400)
-
         end
 
 		if ai.GetTargetUnit() ~= nil then
+			local skillID = math.random(26,27)
 
-			skill = math.random(26, 28)
 
-			if skill == 28 then skill = 27 end
-
-			local target = ai.GetTargetUnit()
-
-			local _x = target.x - enemy.x
-			local _y = target.y - enemy.y
-
-			if skill == 26 then
-				ai.SetFollowTarget(true)
-
-				ai.UseSkill(26)
-				return
+			if skillID == ai.customData.prev then
+				ai.customData.count = ai.customData.count + 1
 			end
 
+			if ai.customData.count == 3 then
+				if skillID == 26 then skillID = 27 else skillID = 26 end
+				ai.customData.count = 0
+			end
 
-
-
-			ai.SetFollowTarget(false)
-				ai.UseSkill(27)
-
-				ai.SetFollowTarget(true)
+			ai.customData.prev = skillID
+			ai.UseSkill(skillID)
 			enemy.MakeKnockback(-200, 0.4)
-			ai.SetFollowTarget(false)
-			Server.RunLater(function()
-
-				local x = enemy.x
-				local y = enemy.y
-				for i = 1,12 do
-					ai.UseSkill(28, Point(x * math.cos(math.rad(i * 30)), y * math.sin(math.rad(i * 30)) ))
-				end
-
-			end, 1)
-
-			--ai.UseSkill(28)
-
 		end
-
-
-
 
 
         if ai.GetTargetUnit() == nil then

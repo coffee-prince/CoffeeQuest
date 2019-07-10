@@ -31,6 +31,7 @@ function REFRESH_STAT()
 	local DEFAULT_HP = 100
 	local ADD_HP = 20
 
+	--local DEFAULT_ATK = 5
 	local DEFAULT_ATK = 5
 	local ADD_ATK = 1
 
