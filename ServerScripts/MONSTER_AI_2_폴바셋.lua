@@ -15,7 +15,10 @@ function firstAttack(enemy,ai,event,data)
 
 			skill = math.random(26, 28)
 
-			if skill == 28 then skill = 27 end
+			if skill == 28 then
+				skill = 27
+			end
+			ai.SetFollowTarget(true)
 
 			local target = ai.GetTargetUnit()
 
@@ -23,8 +26,6 @@ function firstAttack(enemy,ai,event,data)
 			local _y = target.y - enemy.y
 
 			if skill == 26 then
-				ai.SetFollowTarget(true)
-
 				ai.UseSkill(26)
 				return
 			end
@@ -32,11 +33,12 @@ function firstAttack(enemy,ai,event,data)
 
 
 
-			ai.SetFollowTarget(false)
-				ai.UseSkill(27)
+			--ai.SetFollowTarget(false)
+			ai.UseSkill(27)
 
-				ai.SetFollowTarget(true)
+			--	ai.SetFollowTarget(true)
 			enemy.MakeKnockback(-200, 0.4)
+			--[[
 			ai.SetFollowTarget(false)
 			Server.RunLater(function()
 
@@ -49,7 +51,7 @@ function firstAttack(enemy,ai,event,data)
 			end, 1)
 
 			--ai.UseSkill(28)
-
+]]
 		end
 
 
