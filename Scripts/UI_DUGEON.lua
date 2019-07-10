@@ -313,15 +313,25 @@ function DUNGEON_INIT ()
 	end)
 
 	buttons[0].onClick.Add(function()
-		local r = math.random(3, 3)
+		fn.Hide()
 
-		if r < 3 then
+		local r = math.random(1, 100)
+
+		if r <= 60 then
 			Client.FireEvent("REQUEST_GO", 52)
-			fn.Hide()
-		elseif r == 3 then
-			Client.FireEvent("REQUEST_GO", 57)
-			fn.Hide()
+			return
 		end
+
+		if r <= 80 then
+			Client.FireEvent("REQUEST_GO", 57)
+			return
+		end
+
+		if r <= 100 then
+			Client.FireEvent("REQUEST_GO", 58)
+			return
+		end
+
 	end)
 
 	for i = 1, 6 do
