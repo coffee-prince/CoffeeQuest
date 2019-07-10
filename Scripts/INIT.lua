@@ -13,6 +13,7 @@ Client.GetTopic("INIT").Add(function()
 		DUNGEON = DUNGEON_INIT()
 		BOSS = BOSS_INIT()
 		INFO = INFO_INIT()
+		PARTICLE = PARTICLE_INIT()
 		Client.FireEvent("KILL_BOSS_REQUEST", 0)
 	end, 1)
 
