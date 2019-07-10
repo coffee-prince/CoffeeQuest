@@ -32,9 +32,10 @@ function REFRESH_STAT()
 	local ADD_HP = 20
 
 	local DEFAULT_ATK = 5
+	--local DEFAULT_ATK = 5
 	local ADD_ATK = 1
 
-	local DEFAULT_DEF = 5
+	local DEFAULT_DEF = 5000
 	local ADD_DEF = 1
 
 	local DEFAULT_MOVE_SPEED = 150
