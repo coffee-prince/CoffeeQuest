@@ -101,7 +101,9 @@ Server.damageCallback = function(attacker, defender, damage, skillID)
 			attacker.monsterID == 45 or
 			attacker.monsterID == 46 or
 			attacker.monsterID == 47 or
-			attacker.monsterID == 48
+			attacker.monsterID == 48 or
+
+			attacker.monsterID == 89 -- 수룡
 
 			then
 			return math.max(attacker.magicAtk - defender.def, 1)

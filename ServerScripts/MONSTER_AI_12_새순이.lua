@@ -28,7 +28,6 @@ function firstAttack(enemy,ai,event,data)
 			ai.UseSkill(14, Point(_x, _y))
 
 			Server.RunLater(function()
-				enemy.Say("짹짹 레이저포!")
 				ai.UseSkill(15, Point(_x, _y))
 			end, 1)
 
