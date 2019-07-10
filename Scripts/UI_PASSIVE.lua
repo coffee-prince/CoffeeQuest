@@ -14,21 +14,31 @@ function PASSIVE_INIT ()
 	local WIDTH_CLOSE = 30
 	local HEIGHT_CLOSE = 30
 
+	local OFFSET_X_SUM = 366
+	local OFFSET_Y_SUM = 131
+	local WIDTH_SUM = 34
+	local HEIGHT_SUM = 13
+
 
 	local UI_PASSIVE = Image("Pictures/UI/passive.png", Rect(OFFSET_X_PASSIVE, OFFSET_Y_PASSIVE, WIDTH_PASSIVE, HEIGHT_PASSIVE))
 	local UI_PASSIVE_CLOSE_BTN = Button("gfdgd", Rect(OFFSET_X_CLOSE, OFFSET_Y_CLOSE, WIDTH_CLOSE, HEIGHT_CLOSE))
 	local UI_PASSIVE_CLOSE_IMAGE = Image("Pictures/UI/close.png", Rect(0, 0, WIDTH_CLOSE, HEIGHT_CLOSE))
+	local UI_PASSIVE_SUM = Text("+100", Rect(OFFSET_X_SUM, OFFSET_Y_SUM, WIDTH_SUM, HEIGHT_SUM))
 
+	UI_PASSIVE_SUM.textAlign = 6
+	UI_PASSIVE_SUM.textSize = 11
+	UI_PASSIVE_SUM.color = Color(255, 0, 48, 255)
 
 	UI_PASSIVE_CLOSE_BTN.AddChild(UI_PASSIVE_CLOSE_IMAGE)
     UI_PASSIVE_CLOSE_BTN.SetOpacity(0)
 
 	UI_PASSIVE.showOnTop = true
 	UI_PASSIVE_CLOSE_BTN.showOnTop = true
+	UI_PASSIVE_SUM.showOnTop = true
 
 	UI_PASSIVE.visible = false
 	UI_PASSIVE_CLOSE_BTN.visible = false
-
+	UI_PASSIVE_SUM.visible = false
 
 	local OFFSET_X_FONT = 409
 
@@ -76,6 +86,7 @@ function PASSIVE_INIT ()
 		for i = 1, 9 do
 			UI_STATS[i].visible = true
 		end
+		UI_PASSIVE_SUM.visible = true
 	end
 
 	fn.Hide = function()
@@ -85,6 +96,7 @@ function PASSIVE_INIT ()
 		for i = 1, 9 do
 			UI_STATS[i].visible = false
 		end
+		UI_PASSIVE_SUM.visible = false
 	end
 
 	UI_PASSIVE_CLOSE_BTN.onClick.Add(function()
@@ -101,6 +113,8 @@ function PASSIVE_INIT ()
 		UI_STATS[7].text = stat7 .. "개"
 		UI_STATS[8].text = stat8 .. "개"
 		UI_STATS[9].text = stat9 .. "개"
+
+		UI_PASSIVE_SUM.text = "+" .. stat1 + stat2 + stat3 + stat4 + stat5 + stat6 + stat7 + stat8 + stat9
 	end)
 
 	return fn
