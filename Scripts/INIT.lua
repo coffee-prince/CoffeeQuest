@@ -12,6 +12,7 @@ Client.GetTopic("INIT").Add(function()
 		PASSIVE = PASSIVE_INIT()
 		DUNGEON = DUNGEON_INIT()
 		BOSS = BOSS_INIT()
+		Client.FireEvent("KILL_BOSS_REQUEST", 0)
 	end, 1)
 
 end)
