@@ -5,12 +5,12 @@ function INFO_INIT ()
 	local is_show = false
 
 	local OFFSET_X_INFO = 10
-	local OFFSET_Y_INFO = 51
+	local OFFSET_Y_INFO = 96
 	local WIDTH_INFO = 460
-	local HEIGHT_INFO = 702
+	local HEIGHT_INFO = 662
 
 	local OFFSET_X_CLOSE = 438
-	local OFFSET_Y_CLOSE = 53
+	local OFFSET_Y_CLOSE = 98
 	local WIDTH_CLOSE = 30
 	local HEIGHT_CLOSE = 30
 
