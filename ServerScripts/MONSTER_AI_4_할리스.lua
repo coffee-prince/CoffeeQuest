@@ -53,8 +53,8 @@ function firstAttack(enemy,ai,event,data)
 			local t = math.atan2(x - _x, y - _y)
 
 
-			for i = 1, 6 do
-				ai.UseSkill(22, Point(x *  math.cos(t + math.rad(i * r)), y * math.sin(t + math.rad(i * r)) ))
+			for i = 1, math.random(6, 12) do
+				ai.UseSkill(22, Point(x *  math.cos(t + math.rad(i *  math.random(26, 46))), y * math.sin(t + math.rad(i *  math.random(26, 46))) ))
 			end
 
 			ai.UseSkill(21)
