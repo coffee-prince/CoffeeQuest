@@ -21,11 +21,16 @@ function firstAttack(enemy,ai,event,data)
 			end
 
 			if ai.customData.count == 3 then
-				if skillID == 26 then skillID = 27 else skillID = 26 end
+				if skillID == 26 then
+					skillID = 27
+				else
+					skillID = 26
+				end
 				ai.customData.count = 0
 			end
 
 			ai.customData.prev = skillID
+			ai.SetFollowTarget(true)
 			ai.UseSkill(skillID)
 			enemy.MakeKnockback(-200, 0.4)
 		end
