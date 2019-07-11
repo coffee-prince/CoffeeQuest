@@ -12,19 +12,19 @@ Server.GetTopic("RANDOM_FIELD").Add(function()
 
 		level = 0 --2 Å½Å½
 
-	elseif sum <= 25 then
+	elseif sum <= 45 then
 		level = 1 --3 ÆÄ½ºÄíÄ¡
 
-	elseif sum <= 45 then
+	elseif sum <= 100 then
 		level = 2 --4 Åõ½æ
 
-	elseif sum <= 105 then
+	elseif sum <= 250 then
 		level = 3 --5 Ç®¹Ù³Ý
 
-	elseif sum <= 145 then
+	elseif sum <= 300 then
 		level = 4 --6 ÇÒ¸®½º
 
-	elseif sum <= 201 then
+	elseif sum <= 400 then
 		level = 5 --7 ÀÌµð¾
 
 	else
