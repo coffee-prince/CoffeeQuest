@@ -67,7 +67,14 @@ Server.GetTopic("RANDOM_ITEM").Add(function()
 	local ex = math.random(10, 20)
 
 	for i = 1, ex do
+		local percent = math.random(1, 100)
 		local monster_id = math.random(79, 87)
+		if percent <= 50 then
+			monster_id = 83 -- 공격력
+		elseif percent <= 90 then
+			monster_id = 79 -- 체력
+		end
+
 
 		local data = moveAbleList[math.random(1, #moveAbleList)]
 		local spawn_x = data.x

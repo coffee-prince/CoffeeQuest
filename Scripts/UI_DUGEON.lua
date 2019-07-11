@@ -317,12 +317,12 @@ function DUNGEON_INIT ()
 
 		local r = math.random(1, 100)
 
-		if r <= 60 then
+		if r <= 50 then
 			Client.FireEvent("REQUEST_GO", 52)
 			return
 		end
 
-		if r <= 80 then
+		if r <= 75 then
 			Client.FireEvent("REQUEST_GO", 57)
 			return
 		end
