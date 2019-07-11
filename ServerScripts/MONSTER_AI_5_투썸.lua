@@ -12,7 +12,7 @@ function firstAttack(enemy,ai,event,data)
 
             ai.SetFollowTarget(false)
             ai.SetTargetUnit(nil)
-            ai.SetNearTarget(0,400)
+            ai.SetNearTarget(0,1400)
         end
 
 

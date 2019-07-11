@@ -64,7 +64,7 @@ end
 Server.GetTopic("RANDOM_ITEM").Add(function()
 	local field = unit.field
 	math.randomseed(os.time())
-	local ex = math.random(10, 15)
+	local ex = math.random(20, 30)
 	field.SetFieldVar(0, ex)
 
 	for i = 1, ex do

@@ -85,31 +85,37 @@ function DUNGEON_INIT ()
 
 	buttons[1] = Button("", Rect(OFFSET_X_BTN_1, OFFSET_Y_BTN_1, WIDTH_BTN_1, HEIGHT_BTN_1))
 	buttons[1].AddChild(Image("Pictures/UI/dungeon_button_1.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
+	buttons[1].AddChild(Image("Pictures/UI/dungeon_button_ok.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
 	buttons[1].SetOpacity(0)
 	buttons[1].showOnTop = true
 
 	buttons[2] = Button("", Rect(OFFSET_X_BTN_2, OFFSET_Y_BTN_2, WIDTH_BTN_2, HEIGHT_BTN_2))
 	buttons[2].AddChild(Image("Pictures/UI/dungeon_button_1.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
+	buttons[2].AddChild(Image("Pictures/UI/dungeon_button_ok.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
 	buttons[2].SetOpacity(0)
 	buttons[2].showOnTop = true
 
 	buttons[3] = Button("", Rect(OFFSET_X_BTN_3, OFFSET_Y_BTN_3, WIDTH_BTN_3, HEIGHT_BTN_3))
 	buttons[3].AddChild(Image("Pictures/UI/dungeon_button_2.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
+	buttons[3].AddChild(Image("Pictures/UI/dungeon_button_ok.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
 	buttons[3].SetOpacity(0)
 	buttons[3].showOnTop = true
 
 	buttons[4] = Button("", Rect(OFFSET_X_BTN_4, OFFSET_Y_BTN_4, WIDTH_BTN_4, HEIGHT_BTN_4))
 	buttons[4].AddChild(Image("Pictures/UI/dungeon_button_2.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
+	buttons[4].AddChild(Image("Pictures/UI/dungeon_button_ok.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
 	buttons[4].SetOpacity(0)
 	buttons[4].showOnTop = true
 
 	buttons[5] = Button("", Rect(OFFSET_X_BTN_5, OFFSET_Y_BTN_5, WIDTH_BTN_5, HEIGHT_BTN_5))
 	buttons[5].AddChild(Image("Pictures/UI/dungeon_button_3.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
+	buttons[5].AddChild(Image("Pictures/UI/dungeon_button_ok.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
 	buttons[5].SetOpacity(0)
 	buttons[5].showOnTop = true
 
 	buttons[6] = Button("", Rect(OFFSET_X_BTN_6, OFFSET_Y_BTN_6, WIDTH_BTN_6, HEIGHT_BTN_6))
 	buttons[6].AddChild(Image("Pictures/UI/dungeon_button_3.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
+	buttons[6].AddChild(Image("Pictures/UI/dungeon_button_ok.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
 	buttons[6].SetOpacity(0)
 	buttons[6].showOnTop = true
 
@@ -149,42 +155,42 @@ function DUNGEON_INIT ()
 	texts[0].textSize = 14
 	buttons[0].AddChild(texts[0])
 
-	texts[1] = Text("탐탐", Rect(32, 11, 60, 18))
+	texts[1] = Text("Lv1. 탐탐", Rect(26, 11, 72, 18))
 	texts[1].showOnTop = true
 	texts[1].color = Color(0, 0, 0, 255)
 	texts[1].textAlign = 4
 	texts[1].textSize = 14
 	buttons[1].AddChild(texts[1])
 
-	texts[2] = Text("폴바셋", Rect(32, 11, 60, 18))
+	texts[2] = Text("Lv4. 폴바셋", Rect(26, 11, 72, 18))
 	texts[2].showOnTop = true
 	texts[2].color = Color(0, 0, 0, 255)
 	texts[2].textAlign = 4
 	texts[2].textSize = 14
 	buttons[2].AddChild(texts[2])
 
-	texts[3] = Text("파스쿠찌",  Rect(32, 11, 60, 18))
+	texts[3] = Text("Lv2. 파스쿠찌",  Rect(26, 11, 82, 18))
 	texts[3].showOnTop = true
 	texts[3].color = Color(0, 0, 0, 255)
 	texts[3].textAlign = 4
 	texts[3].textSize = 14
 	buttons[3].AddChild(texts[3])
 
-	texts[4] = Text("할리스",  Rect(32, 11, 60, 18))
+	texts[4] = Text("Lv5. 할리스",  Rect(26, 11, 72, 18))
 	texts[4].showOnTop = true
 	texts[4].color = Color(0, 0, 0, 255)
 	texts[4].textAlign = 4
 	texts[4].textSize = 14
 	buttons[4].AddChild(texts[4])
 
-	texts[5] = Text("투썸",  Rect(32, 11, 60, 18))
+	texts[5] = Text("Lv3. 투썸",  Rect(26, 11, 72, 18))
 	texts[5].showOnTop = true
 	texts[5].color = Color(0, 0, 0, 255)
 	texts[5].textAlign = 4
 	texts[5].textSize = 14
 	buttons[5].AddChild(texts[5])
 
-	texts[6] = Text("이디야",  Rect(32, 11, 60, 18))
+	texts[6] = Text("Lv6. 이디야",  Rect(26, 11, 72, 18))
 	texts[6].showOnTop = true
 	texts[6].color = Color(0, 0, 0, 255)
 	texts[6].textAlign = 4
@@ -213,6 +219,11 @@ function DUNGEON_INIT ()
 	buttons[9].AddChild(texts[9])
 
 
+	for i = 1, 6 do
+		--print(buttons[i].children)
+		buttons[i].children[1].visible = false --.visible = false
+		buttons[i].children[2].visible = false --.visible = false
+	end
 
 
 
@@ -236,11 +247,30 @@ function DUNGEON_INIT ()
 	local isBoss2 = false
 	local isBoss3 = false
 
+
 	Client.GetTopic("KILL_BOSS_RESPONSE").Add(function(boss1, boss2, boss3, boss4, boss5, boss6)
+
+		buttons[1].children[1].visible = (boss1 == 0)
+		buttons[1].children[2].visible = (boss1 == 1)
+
+		buttons[2].children[1].visible = (boss4 == 0)
+		buttons[2].children[2].visible = (boss4 == 1)
+
+		buttons[3].children[1].visible = (boss2 == 0)
+		buttons[3].children[2].visible = (boss2 == 1)
+
+		buttons[4].children[1].visible = (boss5 == 0)
+		buttons[4].children[2].visible = (boss5 == 1)
+
+		buttons[5].children[1].visible = (boss3 == 0)
+		buttons[5].children[2].visible = (boss3 == 1)
+
+		buttons[6].children[1].visible = (boss6 == 0)
+		buttons[6].children[2].visible = (boss6 == 1)
+
 		isBoss1 = (boss1 + boss4 == 2)
 		isBoss2 = (boss2 + boss5 == 2)
 		isBoss3 = (boss3 + boss6 == 2)
-
 
 	end)
 
@@ -286,6 +316,7 @@ function DUNGEON_INIT ()
 			buttons[i].visible = true
 		end
 
+
 		if isBoss1 == true then coffees[1].visible = true else coffees[4].visible = true end
 		if isBoss2 == true then coffees[2].visible = true else coffees[5].visible = true end
 		if isBoss3 == true then coffees[3].visible = true else coffees[6].visible = true end
@@ -317,12 +348,12 @@ function DUNGEON_INIT ()
 
 		local r = math.random(1, 100)
 
-		if r <= 50 then
+		if r <= 40 then
 			Client.FireEvent("REQUEST_GO", 52)
 			return
 		end
 
-		if r <= 75 then
+		if r <= 70 then
 			Client.FireEvent("REQUEST_GO", 57)
 			return
 		end
