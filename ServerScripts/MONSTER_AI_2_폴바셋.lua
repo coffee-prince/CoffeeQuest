@@ -9,7 +9,7 @@ function firstAttack(enemy,ai,event,data)
         if enemy.field.playerCount <=0 then
             ai.SetTargetUnit(nil)
         elseif (ai.GetTargetUnit()==nil) then
-            ai.SetNearTarget(0,400)
+            ai.SetNearTarget(0,1400)
         end
 
 		if ai.GetTargetUnit() ~= nil then

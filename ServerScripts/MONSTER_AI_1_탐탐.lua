@@ -15,7 +15,7 @@ function firstAttack(enemy,ai,event,data)
 
             ai.SetFollowTarget(false) --타겟이 사라졌으면 추적을 비활성화
             ai.SetTargetUnit(nil)
-            ai.SetNearTarget(0,400)
+            ai.SetNearTarget(0,1400)
         end
 
 
