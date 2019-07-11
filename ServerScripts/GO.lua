@@ -10,7 +10,7 @@ Server.GetTopic("REQUEST_GO").Add(function(map_id)
 	end
 
 	if map_id == 58 then -- 파밍 던전3 (아이템)
-		unit.SpawnAtFieldID(map_id, 16 * 32, 32 * -32)
+		unit.SpawnAtFieldID(map_id, 16 * 32, 28 * -32)
 	end
 
 	if map_id == 35 then -- 탐탐

@@ -63,11 +63,19 @@ end
 
 Server.GetTopic("RANDOM_ITEM").Add(function()
 	local field = unit.field
-
-	local ex = math.random(10, 20)
+	math.randomseed(os.time())
+	local ex = math.random(10, 15)
+	field.SetFieldVar(0, ex)
 
 	for i = 1, ex do
+		local percent = math.random(1, 100)
 		local monster_id = math.random(79, 87)
+		if percent <= 50 then
+			monster_id = 83 -- 공격력
+		elseif percent <= 90 then
+			monster_id = 79 -- 체력
+		end
+
 
 		local data = moveAbleList[math.random(1, #moveAbleList)]
 		local spawn_x = data.x
