@@ -1,7 +1,7 @@
 Server.GetTopic("RANDOM_DEFENSE").Add(function()
 	local field = unit.field
 
-	local ex = math.random(5, 25)
+	local ex = math.random(10, 25)
 	field.SetFieldVar(0, ex)
 
 	local dir = 1
