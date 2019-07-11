@@ -184,7 +184,7 @@ function HUD_Initialize()
 
     HUD_book_button.onClick.Add(function()
 
-		--if Client.field.dataID ~= 1 then return end
+		if Client.field.dataID ~= 1 then return end
 
 		if PASSIVE.IsShow() == true then PASSIVE.Hide() end
 		if PROFILE.IsShow() == true then PROFILE.Hide() end

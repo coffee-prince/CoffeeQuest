@@ -14,8 +14,8 @@ function PASSIVE_INIT ()
 	local WIDTH_CLOSE = 30
 	local HEIGHT_CLOSE = 30
 
-	local OFFSET_X_SUM = 366
-	local OFFSET_Y_SUM = 131
+	local OFFSET_X_SUM = 368
+	local OFFSET_Y_SUM = 129
 	local WIDTH_SUM = 34
 	local HEIGHT_SUM = 13
 
