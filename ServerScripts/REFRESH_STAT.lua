@@ -32,7 +32,7 @@ function REFRESH_STAT()
 	local ADD_HP = 5
 
 	--local DEFAULT_ATK = 5
-	local DEFAULT_ATK = 2222225
+	local DEFAULT_ATK = 5
 	local ADD_ATK = 1
 
 	local DEFAULT_DEF = 5
