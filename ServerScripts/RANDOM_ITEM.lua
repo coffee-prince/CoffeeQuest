@@ -63,8 +63,8 @@ end
 
 Server.GetTopic("RANDOM_ITEM").Add(function()
 	local field = unit.field
-
-	local ex = math.random(10, 20)
+	math.randomseed(os.time())
+	local ex = math.random(10, 15)
 
 	for i = 1, ex do
 		local percent = math.random(1, 100)
