@@ -209,7 +209,7 @@ function DUNGEON_INIT ()
 
 	texts[8] = Text("Boss 빽종원",  Rect(22, 11, 80, 18))
 	texts[8].showOnTop = true
-	texts[8].color = Color(255, 255, 255, 255)
+	texts[8].color = Color(255, 81, 98, 255)
 	texts[8].textAlign = 4
 	texts[8].textSize = 14
 	buttons[8].AddChild(texts[8])
