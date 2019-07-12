@@ -126,12 +126,14 @@ function DUNGEON_INIT ()
 	buttons[7].showOnTop = true
 
 	buttons[8] = Button("", Rect(OFFSET_X_BTN_8, OFFSET_Y_BTN_8, WIDTH_BTN_8, HEIGHT_BTN_8))
-	buttons[8].AddChild(Image("Pictures/UI/dungeon_button_2.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
+	buttons[8].AddChild(Image("Pictures/UI/dungeon_button_4.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
+	buttons[8].AddChild(Image("Pictures/UI/dungeon_button_ok.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
 	buttons[8].SetOpacity(0)
 	buttons[8].showOnTop = true
 
 	buttons[9] = Button("", Rect(OFFSET_X_BTN_9, OFFSET_Y_BTN_9, WIDTH_BTN_9, HEIGHT_BTN_9))
 	buttons[9].AddChild(Image("Pictures/UI/dungeon_button_3.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
+	buttons[9].AddChild(Image("Pictures/UI/dungeon_button_ok.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
 	buttons[9].SetOpacity(0)
 	buttons[9].showOnTop = true
 
@@ -205,22 +207,22 @@ function DUNGEON_INIT ()
 	texts[7].textSize = 14
 	buttons[7].AddChild(texts[7])
 
-	texts[8] = Text("COMING SOON!",  Rect(22, 11, 80, 18))
+	texts[8] = Text("Boss 빽종원",  Rect(22, 11, 80, 18))
 	texts[8].showOnTop = true
-	texts[8].color = Color(0, 0, 0, 255)
+	texts[8].color = Color(255, 255, 255, 255)
 	texts[8].textAlign = 4
-	texts[8].textSize = 10
+	texts[8].textSize = 14
 	buttons[8].AddChild(texts[8])
 
-	texts[9] = Text("COMING SOON!",  Rect(22, 11, 80, 18))
+	texts[9] = Text("Lv8. 스벅이",  Rect(22, 11, 80, 18))
 	texts[9].showOnTop = true
 	texts[9].color = Color(0, 0, 0, 255)
 	texts[9].textAlign = 4
-	texts[9].textSize = 10
+	texts[9].textSize = 14
 	buttons[9].AddChild(texts[9])
 
 
-	for i = 1, 6 do
+	for i = 1, 9 do
 		--print(buttons[i].children)
 		buttons[i].children[1].visible = false --.visible = false
 		buttons[i].children[2].visible = false --.visible = false
@@ -249,7 +251,7 @@ function DUNGEON_INIT ()
 	local isBoss3 = false
 
 
-	Client.GetTopic("KILL_BOSS_RESPONSE").Add(function(boss1, boss2, boss3, boss4, boss5, boss6)
+	Client.GetTopic("KILL_BOSS_RESPONSE").Add(function(boss1, boss2, boss3, boss4, boss5, boss6, boss7, boss8, boss9)
 
 		buttons[1].children[1].visible = (boss1 == 0)
 		buttons[1].children[2].visible = (boss1 == 1)
@@ -269,9 +271,18 @@ function DUNGEON_INIT ()
 		buttons[6].children[1].visible = (boss6 == 0)
 		buttons[6].children[2].visible = (boss6 == 1)
 
-		isBoss1 = (boss1 + boss4 == 2)
+		buttons[7].children[1].visible = (boss7 == 0)
+		buttons[7].children[2].visible = (boss7 == 1)
+
+		buttons[8].children[1].visible = (boss8 == 0)
+		buttons[8].children[2].visible = (boss8 == 1)
+
+		buttons[9].children[1].visible = (boss9 == 0)
+		buttons[9].children[2].visible = (boss9 == 1)
+
+		isBoss1 = (boss1 + boss4 + boss7 == 3)
 		isBoss2 = (boss2 + boss5 == 2)
-		isBoss3 = (boss3 + boss6 == 2)
+		isBoss3 = (boss3 + boss6 + boss9 == 3)
 
 	end)
 
@@ -300,6 +311,8 @@ function DUNGEON_INIT ()
 	maps[5] = 56 -- 눈탱이
 	maps[6] = 51 -- 이디야
 	maps[7] = 59 -- 그루나루
+	maps[8] = 60 -- 빽종원
+	maps[9] = 61 -- 스벅이
 
 
 
