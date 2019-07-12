@@ -36,4 +36,8 @@ Server.GetTopic("REQUEST_GO").Add(function(map_id)
 	if map_id == 51 then -- 이디야
 		unit.SpawnAtFieldID(map_id, 12 * 32, 20 * -32)
 	end
+
+	if map_id == 59 then -- 탐탐
+		unit.SpawnAtFieldID(map_id, 11 * 32, 14 * -32)
+	end
 end)

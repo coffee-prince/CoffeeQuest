@@ -121,6 +121,7 @@ function DUNGEON_INIT ()
 
 	buttons[7] = Button("", Rect(OFFSET_X_BTN_7, OFFSET_Y_BTN_7, WIDTH_BTN_7, HEIGHT_BTN_7))
 	buttons[7].AddChild(Image("Pictures/UI/dungeon_button_1.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
+	buttons[7].AddChild(Image("Pictures/UI/dungeon_button_ok.png", Rect(0, 0, WIDTH_BTN_0, HEIGHT_BTN_0)))
 	buttons[7].SetOpacity(0)
 	buttons[7].showOnTop = true
 
@@ -197,11 +198,11 @@ function DUNGEON_INIT ()
 	texts[6].textSize = 14
 	buttons[6].AddChild(texts[6])
 
-	texts[7] = Text("COMING SOON!",  Rect(22, 11, 80, 18))
+	texts[7] = Text("Lv7. 그루나루",  Rect(26, 11, 82, 18))
 	texts[7].showOnTop = true
 	texts[7].color = Color(0, 0, 0, 255)
 	texts[7].textAlign = 4
-	texts[7].textSize = 10
+	texts[7].textSize = 14
 	buttons[7].AddChild(texts[7])
 
 	texts[8] = Text("COMING SOON!",  Rect(22, 11, 80, 18))
@@ -298,6 +299,7 @@ function DUNGEON_INIT ()
 	maps[4] = 55 -- 할리스
 	maps[5] = 56 -- 눈탱이
 	maps[6] = 51 -- 이디야
+	maps[7] = 59 -- 그루나루
 
 
 
@@ -365,7 +367,7 @@ function DUNGEON_INIT ()
 
 	end)
 
-	for i = 1, 6 do
+	for i = 1, 9 do
 		buttons[i].onClick.Add(function()
 			Client.FireEvent("REQUEST_GO", maps[i])
 			fn.Hide()
