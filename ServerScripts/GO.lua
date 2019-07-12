@@ -42,7 +42,7 @@ Server.GetTopic("REQUEST_GO").Add(function(map_id)
 	end
 
 	if map_id == 60 then -- 빽종원
-		unit.SpawnAtFieldID(map_id, 11 * 32, 22 * -32)
+		unit.SpawnAtFieldID(map_id, 11 * 32, 19 * -32)
 	end
 
 	if map_id == 61 then -- 스벅
