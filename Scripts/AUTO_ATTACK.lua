@@ -67,6 +67,8 @@ function AutoAttack()
 
 		if fieldID == 57 then
 			player.UseSkill(29, Point(target.x - player.x, target.y - player.y))
+		elseif fieldID == 60 then
+			player.UseSkill(39, Point(target.x - player.x, target.y - player.y))
 		else
 			player.UseSkill(0, Point(target.x - player.x, target.y - player.y))
 		end

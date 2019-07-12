@@ -37,7 +37,15 @@ Server.GetTopic("REQUEST_GO").Add(function(map_id)
 		unit.SpawnAtFieldID(map_id, 12 * 32, 20 * -32)
 	end
 
-	if map_id == 59 then -- 탐탐
+	if map_id == 59 then -- 그루나루
 		unit.SpawnAtFieldID(map_id, 11 * 32, 14 * -32)
+	end
+
+	if map_id == 60 then -- 빽종원
+		unit.SpawnAtFieldID(map_id, 11 * 32, 19 * -32)
+	end
+
+	if map_id == 61 then -- 스벅
+		unit.SpawnAtFieldID(map_id, 11 * 32, 16 * -32)
 	end
 end)
