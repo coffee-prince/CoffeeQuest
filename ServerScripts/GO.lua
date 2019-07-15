@@ -48,4 +48,8 @@ Server.GetTopic("REQUEST_GO").Add(function(map_id)
 	if map_id == 61 then -- 스벅
 		unit.SpawnAtFieldID(map_id, 11 * 32, 16 * -32)
 	end
+
+	if map_id == 62 then -- PVP 아레나
+		unit.SpawnAtFieldID(map_id, math.random(4, 25) * 32, math.random(7, 21) * -32)
+	end
 end)

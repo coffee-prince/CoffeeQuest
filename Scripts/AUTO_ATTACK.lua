@@ -1,3 +1,9 @@
+function GetDistance(me, target)
+
+	return math.sqrt( (me.x-target.x)^2 + (me.y-target.y)^2 )
+
+end
+
 function AutoAttack()
     local player = Client.myPlayerUnit
     local target = nil
@@ -46,6 +52,9 @@ function AutoAttack()
 
 		attackTime = 0
 
+		if fieldID == AREANA_MAP_ID  then
+			target = nil
+		end
 
         if prev_X ~= player.x or prev_y ~= player.y or target == nil or target.valid == false or target.dead == true then
 
@@ -55,8 +64,13 @@ function AutoAttack()
 
 
 				for i = 1, #u do
-					if u[i].name ~= "none" and u[i] ~= player then
-						target = u[i]
+					if u[i].name ~= "none" and u[i] ~= player and u[i].level >= 2 then
+
+						if GetDistance(player, u[i]) < 32 * 9 then
+							target = u[i]
+							break
+						end
+
 					end
 				end
 			else

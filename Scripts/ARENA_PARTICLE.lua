@@ -25,7 +25,7 @@ function ARENA_PARTICLE(posx,posy,id)
   p.SetColorOverLifeTimeColorAlpha(0,0)
   p.AddColorOverLifeTimeAlpha(0.5,255)
 
-  p.SetMaterialTexture("Pictures/axe.png","Pictures/Dust.png")
+  p.SetMaterialTexture("Pictures/Dust.png","Pictures/Dust.png")
 
 
   local p2 = ParticleSystem();
