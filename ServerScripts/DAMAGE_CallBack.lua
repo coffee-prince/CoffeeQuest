@@ -1,4 +1,8 @@
 Server.damageCallback = function(attacker, defender, damage, skillID)
+	if skillID == 40 then
+		return attacker.maxHP * math.random(2, 5) * 0.01
+	end
+
 
 	-- ����1 �˹�
 	if skillID == 10 then
