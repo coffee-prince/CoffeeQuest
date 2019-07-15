@@ -14,31 +14,11 @@ function AutoAttack()
 	local prev_x = player.x
 	local prev_y = player.y
 
+	local AREANA_MAP_ID = 62
+
 
     function auto(dt)
 		local fieldID = Client.field.dataID
-
-
-		if fieldID == 62 then
-
-			local t = nil
-
-			--print(3)
-			local u = Client.field.units
-
-			--local t2 = Client.field.FindNearUnit(player.x, player.y, 32 * 9, 0)
-			for i = 1, #u do
-				if u[i].name ~= "none" and u[i] ~= player then
-					t = u[i]
-				end
-			end
-
-			if t ~= nil then
-				player.UseSkill(40, Point(t.x - player.x, t.y - player.y))
-			end
-
-			return
-		end
 
 
 		if fieldID == 51 then
@@ -68,7 +48,20 @@ function AutoAttack()
 
 
         if prev_X ~= player.x or prev_y ~= player.y or target == nil or target.valid == false or target.dead == true then
-            target = Client.field.FindNearUnit(player.x, player.y, 32 * 9, 2)
+
+			if fieldID == AREANA_MAP_ID  then
+
+				local u = Client.field.units
+
+
+				for i = 1, #u do
+					if u[i].name ~= "none" and u[i] ~= player then
+						target = u[i]
+					end
+				end
+			else
+				target = Client.field.FindNearUnit(player.x, player.y, 32 * 9, 2)
+			end
 
 			prev_x = player.x
 			prev_y = player.y
@@ -93,7 +86,7 @@ function AutoAttack()
 			player.UseSkill(29, Point(target.x - player.x, target.y - player.y))
 		elseif fieldID == 60 then
 			player.UseSkill(39, Point(target.x - player.x, target.y - player.y))
-		elseif fieldID == 62 then
+		elseif fieldID == AREANA_MAP_ID  then
 			player.UseSkill(40, Point(target.x - player.x, target.y - player.y))
 		else
 			player.UseSkill(0, Point(target.x - player.x, target.y - player.y))
